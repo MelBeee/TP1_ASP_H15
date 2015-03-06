@@ -65,6 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MainBD.mdf" />
+    <Content Include="App_Data\MainBD_log.ldf">
+      <DependentUpon>MainBD.mdf</DependentUpon>
+    </Content>
     <Content Include="ClientFormUtilities.js" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
@@ -123,9 +127,9 @@
       <DependentUpon>Room.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlExpressUtilities.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
