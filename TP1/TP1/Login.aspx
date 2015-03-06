@@ -14,28 +14,6 @@
     <div class="main">
         <form name="aspnetForm" method="post" action="Login.aspx" id="aspnetForm" runat="server">
 
-            <div class="mainHeader">
-                <table>
-                    <tr>
-                        <td>
-                            <h2>
-                                <span>Login...</span>
-                            </h2>
-                        </td>
-                        <td>
-                            <div>
-                                <span class="UserFullName">Anonymous</span>
-                                <br />
-                            </div>
-                        </td>
-                        <td>
-                            <%--Image avatar--%>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <hr />
-
             <div class="form">
                 <table>
                     <tr>
@@ -60,21 +38,18 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button type="submit" ID="BTN_Login" Text="Connexion..." runat="server" value="Connexion..." class="submitBTN" />
+                            <asp:Button type="submit" ID="BTN_Login" Text="Connexion..." runat="server" value="Connexion..." class="submitBTN" OnClick="BTN_Login_Click" PostBackUrl="~/Index.aspx" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button type="submit" ID="BTN_Subscribe" Text="Inscription..." runat="server" value="Inscription..." class="submitBTN" />
+                            <asp:Button type="submit" ID="BTN_Subscribe" Text="Inscription..." runat="server" value="Inscription..." class="submitBTN" PostBackUrl="~/Inscription.aspx" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <asp:Button type="submit" ID="BTN_Forgotten" Text="Mot de passe oublié..." runat="server" value="Mot de passe oublié..." class="submitBTN" />
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="text-align: left"></td>
                     </tr>
                 </table>
             </div>

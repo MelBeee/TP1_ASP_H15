@@ -8,10 +8,31 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
+  <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <asp:Button ID="BTN_Profil" runat="server" Text="Gérer votre profil..." PostBackUrl="~/Profil.aspx" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="BTN_Usagers" runat="server" Text="Usagers en ligne..." PostBackUrl="~/Room.aspx" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="BTN_Journal" runat="server" Text="Journal des visites..." PostBackUrl="~/LoginsJournal.aspx" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="BTN_LogOff" runat="server" Text="Déconnexion..." PostBackUrl="~/Login.aspx" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </form>
 </body>
 </html>

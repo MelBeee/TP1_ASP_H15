@@ -13,5 +13,27 @@ namespace TP1
         {
 
         }
+
+        protected void BTN_Login_Click(object sender, EventArgs e)
+        {
+            if(TB_Username.Text == "")
+            {
+
+            }
+            if(TB_Password.Text == "")
+            {
+
+            }
+        }
+
+        //protected void CV_TB_Username_ServerValidate(object source, ServerValidateEventArgs args)
+        //{
+
+        //}
+
+        //protected void CV_TB_Password_ServerValidate(object source, ServerValidateEventArgs args)
+        //{
+
+        //}
     }
 }
