@@ -11,7 +11,15 @@ namespace TP1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string IDConnection = ""; // A MODIFIER CLAIREMENT
+            string Username = ""; // A MODIFIER CLAIREMENT
+            JournalLogin tableLogin = new JournalLogin((string)Application["MainBD"], this);
+            if (Username == "admin")   
+                tableLogin.SelectAll();
+            else
+                tableLogin.SelectByFieldName("UserID", IDConnection);
 
+            tableLogin.MakeGridView(PN_GridView, "LoginsJournal.aspx");
         }
     }
 }

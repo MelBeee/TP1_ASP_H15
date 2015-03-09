@@ -32,14 +32,9 @@ namespace TP1
         public override void InitColumnsVisibility()
         {
             base.InitColumnsVisibility();
+            SetColumnVisibility("ID", false);
             SetColumnVisibility("Password", false);
             SetColumnVisibility("Avatar", false);
-            SetColumnVisibility("ID", false);
-        }
-
-        public override void InitColumnsSortEnable()
-        {
-            base.InitColumnsSortEnable();
         }
 
         public override void InitColumnsTitles()
