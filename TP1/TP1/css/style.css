@@ -1,0 +1,37 @@
+.jumbotron
+{
+	background-color: #449bb6;
+	padding-left:0px;
+	margin-left: 0px;
+   margin-top: 0px;
+   padding-top: 0px;
+	height: 600px;
+}
+nav
+{
+   margin-bottom: 0px;
+   padding-bottom: 10px;
+   border-bottom: 0px;
+}
+{
+   width: 200px;
+}
+label
+{
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+}
+h1
+{
+   text-align: left;
+   padding-left: 10px;
+}
+padding
+{
+   text-align: left;
+   
+}
+img
+{
+   margin-left: 30px;
+}

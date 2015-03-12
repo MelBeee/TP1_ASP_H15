@@ -70,8 +70,8 @@ namespace TP1
         {
             Session["captcha"] = BuildCaptcha();
             // + DateTime.Now.ToString() pour forcer le fureteur recharger le fichier
-            IMGCaptcha.ImageUrl = "~/Captcha.png?ID=" + DateTime.Now.ToString();
-            PN_Captcha.Update();
+            //IMGCaptcha.ImageUrl = "~/Captcha.png?ID=" + DateTime.Now.ToString();
+            //PN_Captcha.Update();
         }
         protected void BTN_Submit_Click(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace TP1
         }
         protected void CV_Captcha_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = (TB_Captcha.Text == (string)Session["captcha"]);
+            //args.IsValid = (TB_Captcha.Text == (string)Session["captcha"]);
         } 
 
 
