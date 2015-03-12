@@ -26,14 +26,6 @@ namespace TP1
             }
         }
 
-        //protected void CV_TB_Username_ServerValidate(object source, ServerValidateEventArgs args)
-        //{
-
-        //}
-
-        //protected void CV_TB_Password_ServerValidate(object source, ServerValidateEventArgs args)
-        //{
-
-        //}
+     
     }
 }

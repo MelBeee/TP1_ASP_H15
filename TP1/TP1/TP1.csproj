@@ -65,6 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MainBaseDonnee.mdf" />
+    <Content Include="App_Data\MainBaseDonnee_log.ldf">
+      <DependentUpon>MainBaseDonnee.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\MainDB.mdf" />
     <Content Include="App_Data\MainDB_log.ldf">
       <DependentUpon>MainDB.mdf</DependentUpon>
