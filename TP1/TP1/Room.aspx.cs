@@ -11,9 +11,7 @@ namespace TP1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Users tableUtilisateurs = new Users((string)Application["MainBD"], this);
-            tableUtilisateurs.SelectAll();
-            tableUtilisateurs.MakeGridView(PN_GridView, "Room.aspx");
+            
         }
     }
 }
