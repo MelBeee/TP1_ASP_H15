@@ -38,7 +38,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button type="submit" ID="BTN_Login" Text="Connexion..." runat="server" value="Connexion..." class="submitBTN" OnClick="BTN_Login_Click" PostBackUrl="~/Index.aspx" />
+                            <asp:Button type="submit" ID="BTN_Login" Text="Connexion..." runat="server" value="Connexion..." class="submitBTN" OnClick="BTN_Login_Click"  />
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +48,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button type="submit" ID="BTN_Forgotten" Text="Mot de passe oublié..." runat="server" value="Mot de passe oublié..." class="submitBTN" />
+                            <asp:Button type="submit" ID="BTN_Forgotten" Text="Mot de passe oublié..." runat="server" value="Mot de passe oublié..." class="submitBTN" OnClick="BTN_Forgotten_Click" />
                         </td>
                     </tr>
                 </table>
