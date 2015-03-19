@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace TP1
 {
@@ -18,25 +19,85 @@ namespace TP1
 
         protected void BTN_Login_Click(object sender, EventArgs e)
         {
-            if(user.BonPassWordEtUsername(TB_Password.Text, TB_Username.Text))
+            if (Page.IsValid)
             {
-                Response.Redirect("Index.aspx");
+                try
+                {
+                    if (BonPassWordEtUsername(TB_Password.Text, TB_Username.Text))
+                    {
+                        Session["User"] = new Users((String)Application["MainDB"], this);
+                        ((Users)Session["User"]).SelectByFieldName("USERNAME", TB_Username.Text);
+
+                        Response.Redirect("Index.aspx");
+                    }
+                    else
+                    {
+                        ClientAlert(this, "Mot de passe ou nom d'utilisateur incorrecte");
+                    }
+                }
+                catch (Exception ieo)
+                {
+                    ClientAlert(this, "Une exception ici, BTN_Login");
+                }
             }
-            else
+        }
+
+        public bool BonPassWordEtUsername(string password, string username)
+        {
+            bool oui = false;
+
+            if (ExecuteSQL("select * from users where username = '" + username + "' and password = '" + password + "'") >= 1)
             {
-                ClientAlert(this, "Mot de passe ou nom d'utilisateur non concordant");
+                oui = true;
             }
+            return oui;
+        }
+
+        public bool BonUsername(string username)
+        {
+            bool oui = false;
+            if (ExecuteSQL("select * from users where username = '" + username + "'") >= 1)
+            {
+                oui = true;
+            }
+            return oui;
+        }
+
+        private int ExecuteSQL(string commande)
+        {
+            // instancier l'objet de collection
+            SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
+            // bâtir l'objet de requête
+            SqlCommand sqlcmd = new SqlCommand(commande);
+            // affecter l'objet de connection à l'objet de requête
+            sqlcmd.Connection = connection;
+            // bloquer l'objet Page.Application afin d'empêcher d'autres sessions concurentes
+            // d'avoir accès à la base de données concernée par la requête en cours
+            Page.Application.Lock();
+            // ouvrir la connection avec la bd
+            connection.Open();
+            // éxécuter la requête SQL et récupérer les enregistrements qui en découlent dans l'objet Reader
+            SqlDataReader reader = sqlcmd.ExecuteReader();
+
+            return reader.RecordsAffected;
         }
 
         protected void BTN_Forgotten_Click(object sender, EventArgs e)
         {
-            if(user.BonUsername(TB_Username.Text))
+            try
             {
-                EnvoyerPasswordEmail(user);
+                if (BonUsername(TB_Username.Text))
+                {
+                    EnvoyerPasswordEmail(user);
+                }
+                else
+                {
+                    ClientAlert(this, "Nom d'utilisateur incorrecte");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ClientAlert(this, "Username non existant");
+                ClientAlert(this, "Une exception ici BTN_Forgotten");
             }
         }
 

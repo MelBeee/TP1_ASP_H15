@@ -72,29 +72,7 @@ namespace TP1
             return img;
         }
 
-        public bool BonPassWordEtUsername(string password, string username)
-        {
-            bool oui = false;
-
-            if(QuerySQL("select * from users where username = '" + username + "' and password = '" + password + "'") >= 1)
-            {
-                oui = true; 
-            }
-            return oui;
-        }
-
-        public bool BonUsername(string username)
-        {
-            bool oui = false;
-            if(QuerySQL("select * from users where username = '" + username + "'") >= 1)
-            {
-                oui = true;
-            }
-            return oui;
-        }
-
-
-
+        
 
         //public string GetEmailFromUsers(String Username)
         //{
