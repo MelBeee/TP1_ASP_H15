@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="masterpage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -66,13 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MainBaseDonnee.mdf" />
-    <Content Include="App_Data\MainBaseDonnee_log.ldf">
-      <DependentUpon>MainBaseDonnee.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\MainDB.mdf" />
-    <Content Include="App_Data\MainDB_log.ldf">
-      <DependentUpon>MainDB.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\MainBaseDonnee_log.ldf" />
     <Content Include="ClientFormUtilities.js" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
@@ -114,6 +109,13 @@
     </Compile>
     <Compile Include="LoginsJournal.aspx.designer.cs">
       <DependentUpon>LoginsJournal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="masterpage.Master.cs">
+      <DependentUpon>masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpage.Master.designer.cs">
+      <DependentUpon>masterpage.Master</DependentUpon>
     </Compile>
     <Compile Include="Profil.aspx.cs">
       <DependentUpon>Profil.aspx</DependentUpon>
