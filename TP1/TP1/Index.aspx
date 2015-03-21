@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="BTN_LogOff" runat="server" Text="Déconnexion..." PostBackUrl="~/Login.aspx" />
+                        <asp:Button ID="BTN_LogOff" runat="server" Text="Déconnexion..." OnClick="BTN_LogOff_Click" />
                     </td>
                 </tr>
             </table>

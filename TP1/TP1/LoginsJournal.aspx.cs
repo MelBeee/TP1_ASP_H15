@@ -11,7 +11,20 @@ namespace TP1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-       
+            ListUsers();
+        }
+
+        public void ListUsers()
+        {
+            // Création d'une nouvelle instance de Users (reliée à la table MainDB.Users)
+            Logs users = new Logs((String)Application["MainDB"], this);
+            //users.SelectByUserID(Session["Selected_ID"].ToString());
+            users.MakeGridView(PN_Users, "LoginsJournal.aspx", Session["Selected_ID"].ToString());
+        }
+
+        protected void BTN_Retour_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
         }
     }
 }

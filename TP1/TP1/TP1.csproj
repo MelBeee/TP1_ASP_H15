@@ -113,6 +113,7 @@
     <Compile Include="LoginsJournal.aspx.designer.cs">
       <DependentUpon>LoginsJournal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logs.cs" />
     <Compile Include="masterpage.Master.cs">
       <DependentUpon>masterpage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
