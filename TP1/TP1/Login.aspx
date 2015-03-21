@@ -23,7 +23,7 @@
                         <asp:RequiredFieldValidator
                             ID="RFV_TB_Username"
                             runat="server"
-                            Text="Vide!"
+                            Text="Champ requis"
                             ErrorMessage="Nom d'utilisateur obligatoire !"
                             ControlToValidate="TB_Username"
                             ValidationGroup="VG_Login"> 
@@ -48,7 +48,7 @@
                         <asp:RequiredFieldValidator
                             ID="RFV_TB_Password"
                             runat="server"
-                            Text="Vide!"
+                            Text="Champ requis"
                             ErrorMessage="Mot de passe obligatoire !"
                             ControlToValidate="TB_Password"
                             ValidationGroup="VG_Login"> 

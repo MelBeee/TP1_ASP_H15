@@ -27,8 +27,8 @@ namespace TP1
             essaieDeConnexion++;
             if (Page.IsValid)
             {
-                Users personnes = new Users((string)Application["MainDB"], this);
-                Session["Selected_ID"] = personnes.getID(TB_Username.Text);
+                Users utilisateur = new Users((string)Application["MainDB"], this);
+                Session["Selected_ID"] = utilisateur.getID(TB_Username.Text);
                 Session["Selected_UserName"] = TB_Username.Text;
                 Session["UserValid"] = true;
                 Response.Redirect("Index.aspx");
@@ -39,32 +39,36 @@ namespace TP1
             }
         }
 
-
         protected void BTN_PasswordReminder_Click(object sender, EventArgs e)
         {
-            Users personnes = new Users((string)Application["MainDB"], this);
+            Users utilisateur = new Users((string)Application["MainDB"], this);
             if (TB_Username.Text == "")
                 Response.Write("Le nom d'usager est vide.");
-            else if (!personnes.Exist(TB_Username.Text))
+            else if (!utilisateur.Exist(TB_Username.Text))
                 Response.Write("Le nom d'usager n'existe pas.");
             else
             {
-                Email eMail = new Email();
+                Email email = new Email();
 
                 // Vous devez avoir un compte gmail
-                eMail.From = "mel.beee@gmail.com";
-                eMail.Password = "MelBeee";
-                eMail.SenderName = "MelBeee";
+                email.From = "tp1aspemailsender@gmail.com";
+                email.Password = "melissa1dominic";
+                email.SenderName = "Melissa et Dominic";
 
-                eMail.Host = "smtp.gmail.com";
-                eMail.HostPort = 587;
-                eMail.SSLSecurity = true;
+                email.Host = "smtp.gmail.com";
+                email.HostPort = 587;
+                email.SSLSecurity = true;
 
-                eMail.To = personnes.GetEmail(personnes.getID(TB_Username.Text));
-                eMail.Subject = "Mot de passe oublié";
-                eMail.Body = "Votre mot de passe est : " + personnes.GetPassword(personnes.getID(TB_Username.Text));
+                email.To = utilisateur.GetEmail(utilisateur.getID(TB_Username.Text));
+                email.Subject = "Mot de passe oublié";
+                email.Body = " Bonjour " + TB_Username.Text  + "" +
+                             ". Vous avez demandé un courriel pour vous rappelez de votre mot de passe. " +
+                             " Si ce n'est pas le cas, ignorez ce courriel. " + 
+                             " Votre mot de passe est : " + utilisateur.GetPassword(utilisateur.getID(TB_Username.Text)) +
+                             " Bonne journée !";
+                email.Body = email.Body.Replace("@", "@" + Environment.NewLine);
 
-                if (eMail.Send())
+                if (email.Send())
                 {
                     Response.Write("Courriel envoyé.");
                 }
@@ -75,15 +79,34 @@ namespace TP1
 
         protected void CV_TB_UserName_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            Users personnes = new Users((string)Application["MainDB"], this);
-            args.IsValid = personnes.Exist(TB_Username.Text);
+            Users utilisateur = new Users((string)Application["MainDB"], this);
+            args.IsValid = utilisateur.Exist(TB_Username.Text);
+            if (TB_Username.Text == "")
+            {
+                TB_Username.BackColor = System.Drawing.Color.FromArgb(51, 122, 183);
+                args.IsValid = false;
+            }
+            else
+            {
+                TB_Username.BackColor = System.Drawing.Color.White;
+                args.IsValid = true;
+            }
         }
 
         protected void CV_Password_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            Users personnes = new Users((string)Application["MainDB"], this);
-            args.IsValid = personnes.Valid(TB_Username.Text, TB_Password.Text);
-
+            Users utilisateur = new Users((string)Application["MainDB"], this);
+            args.IsValid = utilisateur.Valid(TB_Username.Text, TB_Password.Text);
+            if (TB_Password.Text == "")
+            {
+                TB_Password.BackColor = System.Drawing.Color.FromArgb(51, 122, 183);
+                args.IsValid = false;
+            }
+            else
+            {
+                TB_Password.BackColor = System.Drawing.Color.White;
+                args.IsValid = true;
+            }
         }
     }
 }
