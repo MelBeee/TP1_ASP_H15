@@ -13,13 +13,13 @@ namespace TP1 {
     public partial class Login {
         
         /// <summary>
-        /// Contrôle aspnetForm.
+        /// Contrôle form1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm aspnetForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// Contrôle TB_Username.
@@ -85,21 +85,30 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Button BTN_Login;
         
         /// <summary>
-        /// Contrôle BTN_Subscribe.
+        /// Contrôle BTN_Inscription.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Subscribe;
+        protected global::System.Web.UI.WebControls.Button BTN_Inscription;
         
         /// <summary>
-        /// Contrôle BTN_Forgotten.
+        /// Contrôle BTN_PasswordReminder.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Forgotten;
+        protected global::System.Web.UI.WebControls.Button BTN_PasswordReminder;
+        
+        /// <summary>
+        /// Contrôle VGS_Logi.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary VGS_Logi;
     }
 }

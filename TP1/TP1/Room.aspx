@@ -21,7 +21,7 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
       SelectCommand="SELECT [ID], [Username], [Fullname], [Email], [Avatar] FROM [users]"
-     ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\MainBaseDonnee.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" />
+     ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\MainDB.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" />
       <asp:Button ID="BTN_Retour" runat="server" Text="Retour..." PostBackUrl="~/Index.aspx"/>
   </form>
 </body>

@@ -11,15 +11,12 @@
     <script src="ClientFormUtilities.js"></script>
 </head>
 <body>
-    <div class="main">
-        <form name="aspnetForm" method="post" action="Login.aspx" id="aspnetForm" runat="server">
-
-            <div class="form">
-       <table>
+    <form id="form1" runat="server">
+        <div >
+            <table>
                 <tr>
                     <td>
                         <asp:Label for="TB_Username" runat="server" Text="Nom d'usager"></asp:Label>
-
                     </td>
                     <td>
                         <asp:TextBox ID="TB_Username" runat="server" ></asp:TextBox>
@@ -27,7 +24,7 @@
                             ID="RFV_TB_Username"
                             runat="server"
                             Text="Vide!"
-                            ErrorMessage="Le nom d'usager est vide!"
+                            ErrorMessage="Nom d'utilisateur obligatoire !"
                             ControlToValidate="TB_Username"
                             ValidationGroup="VG_Login"> 
                         </asp:RequiredFieldValidator>
@@ -35,7 +32,7 @@
                         <asp:CustomValidator
                             ID="CV_Username"
                             runat="server"
-                            ErrorMessage="Ce nom d'usager n'existe pas!"
+                            ErrorMessage="Nom d'utilisateur innexistant !"
                             Display="None"
                             ValidationGroup="VG_Login"
                             OnServerValidate="CV_TB_UserName_ServerValidate"> 
@@ -47,12 +44,12 @@
                         <asp:Label for="TB_Password" runat="server" Text="Mot de passe"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TB_Password" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="TB_Password" runat="server" CssClass="TextBox" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator
                             ID="RFV_TB_Password"
                             runat="server"
                             Text="Vide!"
-                            ErrorMessage="Le mot de passe est vide!"
+                            ErrorMessage="Mot de passe obligatoire !"
                             ControlToValidate="TB_Password"
                             ValidationGroup="VG_Login"> 
                         </asp:RequiredFieldValidator>
@@ -60,31 +57,42 @@
                         <asp:CustomValidator
                             ID="CV_Password"
                             runat="server"
-                            ErrorMessage="Le mot de passe n'est pas valide."
+                            ErrorMessage="Mot de passe invalide !"
                             Display="None"
                             ValidationGroup="VG_Login"
                             OnServerValidate="CV_Password_ServerValidate"> 
                         </asp:CustomValidator>
                     </td>
                 </tr>
-                    <tr>
-                        <td>
-                            <asp:Button type="submit" ID="BTN_Login" Text="Connexion..." runat="server" value="Connexion..." class="submitBTN" OnClick="BTN_Login_Click"  />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button type="submit" ID="BTN_Subscribe" Text="Inscription..." runat="server" value="Inscription..." class="submitBTN" PostBackUrl="~/Inscription.aspx" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button type="submit" ID="BTN_Forgotten" Text="Mot de passe oublié..." runat="server" value="Mot de passe oublié..." class="submitBTN" OnClick="BTN_Forgotten_Click" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </form>
-    </div>
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="BTN_Login" runat="server" Text="Soumettre..." class="submitBTN" ValidationGroup="VG_Login" OnClick="BTN_Login_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="BTN_Inscription" class="submitBTN" runat="server" Text="Inscription..."  PostBackUrl="~/Inscription.aspx" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="BTN_PasswordReminder" class="submitBTN" runat="server" Text="Mot de passe oublié..." OnClick="BTN_PasswordReminder_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <asp:ValidationSummary
+                            ID="VGS_Logi"
+                            runat="server"
+                            ValidationGroup="VG_Login"
+                            HeaderText="Erreurs rencontrées : &lt;hr/&gt;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
 </body>
 </html>

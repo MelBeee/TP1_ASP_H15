@@ -156,7 +156,7 @@ namespace SqlExpressUtilities
 
       public string getID(string UserName)
       {
-         string sqlCommand = "SELECT ID FROM PERSONNES WHERE USERNAME = '" + UserName + "'";
+         string sqlCommand = "SELECT ID FROM USERS WHERE USERNAME = '" + UserName + "'";
 
          // instancier l'objet de collection
          connection = new SqlConnection(connexionString);
@@ -236,7 +236,7 @@ namespace SqlExpressUtilities
 
       public string SelectByUserID(String ID)
       {
-         string sqlCommand = "SELECT UserName FROM PERSONNES WHERE ID = '" + ID + "'";
+         string sqlCommand = "SELECT UserName FROM USERS WHERE ID = '" + ID + "'";
 
          // instancier l'objet de collection
          connection = new SqlConnection(connexionString);
