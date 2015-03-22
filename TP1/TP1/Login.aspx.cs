@@ -61,11 +61,11 @@ namespace TP1
 
                 email.To = utilisateur.GetEmail(utilisateur.getID(TB_Username.Text));
                 email.Subject = "Mot de passe oublié";
-                email.Body = " Bonjour " + TB_Username.Text  + "" +
-                             ". Vous avez demandé un courriel pour vous rappelez de votre mot de passe. " +
-                             " Si ce n'est pas le cas, ignorez ce courriel. " + 
+                email.Body = " Bonjour " + TB_Username.Text + " <br/>" +
+                             " Vous avez demandé un courriel pour vous rappelez de votre mot de passe. " +
+                             " Si ce n'est pas le cas, ignorez ce courriel.  <br/> <br/>" + 
                              " Votre mot de passe est : " + utilisateur.GetPassword(utilisateur.getID(TB_Username.Text)) +
-                             " Bonne journée !";
+                             " <br/><br/> Bonne journée !";
                 email.Body = email.Body.Replace("@", "@" + Environment.NewLine);
 
                 if (email.Send())
