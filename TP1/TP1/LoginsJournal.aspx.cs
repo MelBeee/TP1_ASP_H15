@@ -16,10 +16,15 @@ namespace TP1
 
         public void ListUsers()
         {
+            string UserID = Session["Selected_ID"].ToString();
+            
             // Création d'une nouvelle instance de Users (reliée à la table MainDB.Users)
             Logs users = new Logs((String)Application["MainDB"], this);
-            //users.SelectByUserID(Session["Selected_ID"].ToString());
-            users.MakeGridView(PN_Users, "LoginsJournal.aspx", Session["Selected_ID"].ToString());
+            if(users.GetUsername(Session["Selected_ID"].ToString()) == "admin")
+            {
+                UserID = "admin";
+            }
+            users.MakeGridView(PN_Users, "LoginsJournal.aspx", UserID);
         }
 
         protected void BTN_Retour_Click(object sender, EventArgs e)

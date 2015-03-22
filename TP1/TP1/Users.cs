@@ -5,9 +5,9 @@ using System.Web;
 
 namespace TP1
 {
-   public class Users : SqlExpressUtilities.SqlExpressWrapper
-   {
-         public long ID { get; set; }
+    public class Users : SqlExpressUtilities.SqlExpressWrapper
+    {
+        public long ID { get; set; }
         public String FullName { get; set; }
         public String UserName { get; set; }
         public String Password { get; set; }
@@ -91,10 +91,9 @@ namespace TP1
             if (reader.Read())
             {
                 string read = reader.GetString(0);
-                QuerySQL("SELECT * FROM " + SQLTableName + " WHERE ID = " + ID);
                 return read;
             }
-                
+
             return "";
         }
 
@@ -104,7 +103,6 @@ namespace TP1
             if (reader.Read())
             {
                 string read = reader.GetString(0);
-                QuerySQL("SELECT * FROM " + SQLTableName + " WHERE ID = " + ID);
                 return read;
             }
 
@@ -117,11 +115,10 @@ namespace TP1
             if (reader.Read())
             {
                 string read = reader.GetString(0);
-                QuerySQL("SELECT * FROM " + SQLTableName + " WHERE ID = " + ID);
                 return read;
             }
 
             return "";
         }
-   }
+    }
 }
