@@ -58,12 +58,12 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Image IMG_User;
         
         /// <summary>
-        /// Contrôle ContentPlaceHolder1.
+        /// Contrôle Contain.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Contain;
     }
 }

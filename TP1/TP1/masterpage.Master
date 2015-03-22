@@ -5,32 +5,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="StyleMasterPage.css" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <table>
-                <tr>
-                    <td>
-                        <h1> <asp:Label ID="LB_NomPage"  runat="server" Text="Titre Page"></asp:Label> </h1>
-                    </td>
-                    <td>
-                        <h2> <asp:Label ID="LB_User"  runat="server" Text="Nom Complet"></asp:Label>  </h2>
-                    </td>
-                    <td>
-                        <h3> <asp:Image ID="IMG_User"  runat="server" ClientIDMode="Static" /> </h3>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <hr />
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+	<form id="form1" runat="server">
+		<div class="formmasterpage">
+			<table >
+				<tr>
+					<td id ="pagetitle">
+						<h1>
+							<asp:Label ID="LB_NomPage" CssClass="pagetitle" runat="server" Text="Page Title"></asp:Label>
+						</h1>
+					</td>
+					<td class ="fullnameuser">
+						<asp:Label ID="LB_User" CssClass="fullnameuser" runat="server" Text="Full Name"></asp:Label>
+					</td>
+					<td class ="pictureuser">
+						<asp:Image ID="IMG_User" CssClass="pictureuser" runat="server" ClientIDMode="Static" />
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<hr />
+
+		<div>
+			<asp:ContentPlaceHolder ID="Contain" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+	</form>
 </body>
 </html>

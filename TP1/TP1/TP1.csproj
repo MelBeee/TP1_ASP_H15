@@ -78,6 +78,7 @@
     <Content Include="LoginsJournal.aspx" />
     <Content Include="Profil.aspx" />
     <Content Include="Room.aspx" />
+    <Content Include="StyleMasterPage.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

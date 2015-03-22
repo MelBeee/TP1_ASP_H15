@@ -18,15 +18,32 @@ namespace TP1
       }
       protected void SetPageTitre()
       {
-         LB_NomPage.Text = ""; // get un nom de chaque winform
+          LB_NomPage.Text = Path.GetFileName(Request.PhysicalPath).Substring(0, Path.GetFileName(Request.PhysicalPath).Length - 5);
       }
       protected void SetAvatarUser()
       {
-         IMG_User.ImageUrl = ""; // get un path d'image de la bd si session est !null else image de base 
+          String avatar_ID = "";
+          if (Session["Avatar"] != null)
+          {
+              avatar_ID = Session["Avatar"].ToString();
+          }
+          else
+          {
+              avatar_ID = "Anonymous";
+          }
+          IMG_User.ImageUrl = @"~\Avatars\" + avatar_ID + ".png";
+
       }
       protected void SetNomUser()
       {
-         LB_User.Text = "";  // get un nom d'user de la bd si session !null else pas de nom
+          if (Session["FullName"] != null)
+          {
+              LB_User.Text = Session["FullName"].ToString();
+          }
+          else
+          {
+              LB_User.Text = "";
+          }   
       }
    }
 }

@@ -10,8 +10,6 @@ namespace TP1
 {
     public partial class Login : System.Web.UI.Page
     {
-        private static int essaieDeConnexion { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -24,18 +22,20 @@ namespace TP1
 
         protected void BTN_Login_Click(object sender, EventArgs e)
         {
-            essaieDeConnexion++;
             if (Page.IsValid)
             {
                 Users utilisateur = new Users((string)Application["MainDB"], this);
-                Session["Selected_ID"] = utilisateur.getID(TB_Username.Text);
-                Session["Selected_UserName"] = TB_Username.Text;
-                Session["UserValid"] = true;
-                Response.Redirect("Index.aspx");
-            }
-            else if (essaieDeConnexion >= 3)
-            {
-                Session.Timeout = 5;
+                if(utilisateur.GetPassword(utilisateur.getID(TB_Username.Text)) == TB_Password.Text)
+                {
+                    Session["Selected_ID"] = utilisateur.getID(TB_Username.Text);
+                    Session["Selected_UserName"] = TB_Username.Text;
+                    Session["UserValid"] = true;
+                    Response.Redirect("Index.aspx");
+                }
+                else
+                {
+                    Response.Write("Mot de passe invalide");
+                }
             }
         }
 
