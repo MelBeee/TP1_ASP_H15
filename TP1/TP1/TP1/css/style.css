@@ -1,0 +1,112 @@
+.jumbotron
+{
+	background-color: #449bb6;
+	padding-left:0px;
+	margin-left: 0px;
+   margin-top: 0px;
+   padding-top: 0px;
+	height: 600px;
+}
+.center_button
+{
+   max-width: 250px;
+}
+.navbar-brand
+{  
+   margin-top: 0px;
+}
+nav
+{
+   margin-bottom: 0px;
+   padding-bottom: 10px;
+   border-bottom: 0px;
+}
+{
+   width: 200px;
+}
+label
+{
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+}
+h1
+{
+   text-align: left;
+   padding-left: 10px;
+}
+padding
+{
+   text-align: left;
+   
+}
+img
+{
+   margin-left: 30px;
+}
+input
+{
+   margin-bottom: 15px;
+}
+.input-recaptcha{
+ width:172px;   
+}
+a
+{
+	background-color: #013ADF;
+	color: #ffffff;
+	height: 25px;
+	padding: 10px;
+}
+body
+{
+	background-color: #e1e1e1;
+}
+.inscrip_img
+{	
+	height: 150px;
+	width: 150px;
+	max-height: 150px;
+	max-width: 150px;
+	position: center;
+	margin-left: 100px;
+	margin-bottom: 30px;
+}
+.btn_chose
+{
+	margin-bottom: 30px;
+	position: center;
+	margin-left: 70px;
+	width: 200px;
+}
+footer div.footer-ribbon:before {
+    border-right-color: #005580;
+}
+footer div.footer-ribbon:before {
+    border-right: 10px solid #005580;
+    border-top: 16px solid rgba(0, 0, 0, 0);
+    content: "";
+    display: block;
+    height: 0;
+    left: -10px;
+    position: absolute;
+    top: 0;
+    width: 7px;
+}
+footer div.container div.row > div {
+    margin-bottom: 25px;
+}
+
+
+footer div.footer-ribbon span{
+    color: #ffffff;
+    font-weight: 700;
+}
+
+footer {
+    background: #121214;
+    border-top: 4px solid #1F1F1F;
+    font-size: 0.9em;
+    padding: 40px 0 0;
+    position: asbolute;
+	margin-top: 30px;
+}

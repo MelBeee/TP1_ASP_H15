@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterpage.master.cs" Inherits="TP1.masterpage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+
+        <nav class="navbar navbar-inverse" role="navigation">
+        <h2 style="color: white"> <asp:Label ID="Label1"  runat="server" Text="Titre Page"></asp:Label>
+        <a class="navbar-brand navbar-right" href="#">
+                </a>
+            </h2>
+    </nav>
+
+
+
+
+
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <h1> <asp:Label ID="LB_NomPage"  runat="server" Text="Titre Page"></asp:Label> </h1>
+                    </td>
+                    <td>
+                        <h2> <asp:Label ID="LB_User"  runat="server" Text="Nom Complet"></asp:Label>  </h2>
+                    </td>
+                    <td>
+                        <h3> <asp:Image ID="IMG_User"  runat="server" ClientIDMode="Static" /> </h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
