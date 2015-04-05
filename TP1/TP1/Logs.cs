@@ -65,7 +65,7 @@ namespace TP1
                     // Insertion des données
                     tr = new TableRow();
                     tr.CssClass = "grid";
-                    InsertionUserName(tr, reader.GetString(1));
+                    InsertionUserName(tr, UserSelected);
                     InsertionDateLogin(tr, reader.GetDateTime(2));
                     InsertionDuree(tr, reader.GetDateTime(2), reader.GetDateTime(3));
                     Grid.Rows.Add(tr);
@@ -121,17 +121,6 @@ namespace TP1
             td.CssClass = "grid";
 
             tr.Cells.Add(td);
-        }
-
-        public string GetUsername(string ID)
-        {
-            QuerySQL("Select username from users where id = " + ID);
-            if (reader.Read())
-            {
-                string read = reader.GetString(0);
-                return read;
-            }
-            return "";
         }
     }
 }
