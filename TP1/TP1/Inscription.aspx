@@ -37,16 +37,78 @@
 
                 <label for="inputNomU" class="sr-only">Username</label>
                 <asp:TextBox type="name" id="nom_Usager" class="form-control" placeholder="Nom Usager" autofocus runat="server"></asp:TextBox>
+
+                <asp:RequiredFieldValidator
+                            ID="RFV_TB_Username_Inscription"
+                            runat="server"
+                            Text="Champ requis"
+                            ErrorMessage="Nom d'utilisateur obligatoire !"
+                            ControlToValidate="nom_Usager"
+                            ValidationGroup="VG_Inscription"> 
+                        </asp:RequiredFieldValidator>
+
                 <label for="inputPrenom" class="sr-only">Prenom</label>
                 <asp:TextBox type="name" id="Prenom_ID" class="form-control" placeholder="Prenom" runat="server" ></asp:TextBox>
+
+                 <asp:RequiredFieldValidator
+                            ID="RFV_TB_Prenom_Inscription"
+                            runat="server"
+                            Text="Champ requis"
+                            ErrorMessage="Prenom obligatoire !"
+                            ControlToValidate="Prenom_ID"
+                            ValidationGroup="VG_Inscription"> 
+                        </asp:RequiredFieldValidator>
+
                 <label for="inputNom" class="sr-only">Prenom</label>
                 <asp:TextBox type="name" id="Nom_ID" class="form-control" placeholder="Nom"  runat="server"></asp:TextBox>
+
+                <asp:RequiredFieldValidator
+                            ID="RFV_TB_Nom_Inscription"
+                            runat="server"
+                            Text="Champ requis"
+                            ErrorMessage="Nom obligatoire !"
+                            ControlToValidate="Nom_ID"
+                            ValidationGroup="VG_Inscription"> 
+                        </asp:RequiredFieldValidator>
+
                  <label for="inputEmail" class="sr-only">Email address</label>
                 <asp:TextBox type="email" id="inputEmail" class="form-control" placeholder="Email address" runat="server"></asp:TextBox>
+
+                <asp:RequiredFieldValidator
+                            ID="RFV_TB_inputEmail_Inscription"
+                            runat="server"
+                            Text="Champ requis"
+                            ErrorMessage="Email obligatoire !"
+                            ControlToValidate="inputEmail"
+                            ValidationGroup="VG_Inscription"> 
+                        </asp:RequiredFieldValidator>
+
                 <label for="inputEmail" class="sr-only">Confirmer Email address</label>
                 <asp:TextBox type="email" id="inputEmail_confrim" class="form-control" placeholder="Confirmer Email address"  runat="server"></asp:TextBox>
+
+                <asp:RequiredFieldValidator
+                            ID="RFV_TB_inputEmail_confirm_Inscription"
+                            runat="server"
+                            Text="Champ requis"
+                            ErrorMessage="Confirmation d'Email obligatoire !"
+                            ControlToValidate="inputEmail_confrim"
+                            ValidationGroup="VG_Inscription"> 
+                        </asp:RequiredFieldValidator>
+
                 <label for="inputPassword" class="sr-only">Password</label>
                 <asp:TextBox type="password" id="inputPassword" class="form-control" placeholder="Password" runat="server"></asp:TextBox>
+                
+                
+                <asp:RequiredFieldValidator
+                            ID="RFV_TB_inputPassword_Inscription"
+                            runat="server"
+                            Text="Champ requis"
+                            ErrorMessage="Password obligatoire !"
+                            ControlToValidate="inputPassword"
+                            ValidationGroup="VG_Inscription"> 
+                        </asp:RequiredFieldValidator>
+
+
                 <label for="inputPassword" class="sr-only">Password</label>
                 <asp:TextBox type="password" id="inputPassword_Con" data-match="#inputPassword" data-match-error="Whoops, these don't match" class="form-control" placeholder="Confirmer Password" runat="server"></asp:TextBox>
 
@@ -114,6 +176,12 @@
                 <div class="center_button">
                  <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
                  <asp:Button ID="BTN_Inscription_Annuler" class="btn btn-lg btn-primary btn-block" runat="server" Text="Annuler"  PostBackUrl="~/Login.aspx" OnClick="BTN_Inscription_Annuler_Click" />
+
+                     <asp:ValidationSummary
+                            ID="VGS_Inscription"
+                            runat="server"
+                            ValidationGroup="VG_Inscription"
+                            HeaderText="Erreurs rencontrées : &lt;hr/&gt;" />
                
             </div>
 

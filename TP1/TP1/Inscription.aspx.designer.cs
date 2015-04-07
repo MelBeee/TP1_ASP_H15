@@ -49,6 +49,15 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox nom_Usager;
         
         /// <summary>
+        /// Contrôle RFV_TB_Username_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_Username_Inscription;
+        
+        /// <summary>
         /// Contrôle Prenom_ID.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Prenom_ID;
+        
+        /// <summary>
+        /// Contrôle RFV_TB_Prenom_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_Prenom_Inscription;
         
         /// <summary>
         /// Contrôle Nom_ID.
@@ -67,6 +85,15 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox Nom_ID;
         
         /// <summary>
+        /// Contrôle RFV_TB_Nom_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_Nom_Inscription;
+        
+        /// <summary>
         /// Contrôle inputEmail.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputEmail;
+        
+        /// <summary>
+        /// Contrôle RFV_TB_inputEmail_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_inputEmail_Inscription;
         
         /// <summary>
         /// Contrôle inputEmail_confrim.
@@ -85,6 +121,15 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox inputEmail_confrim;
         
         /// <summary>
+        /// Contrôle RFV_TB_inputEmail_confirm_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_inputEmail_confirm_Inscription;
+        
+        /// <summary>
         /// Contrôle inputPassword.
         /// </summary>
         /// <remarks>
@@ -92,6 +137,15 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputPassword;
+        
+        /// <summary>
+        /// Contrôle RFV_TB_inputPassword_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_inputPassword_Inscription;
         
         /// <summary>
         /// Contrôle inputPassword_Con.
@@ -119,5 +173,14 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_Inscription_Annuler;
+        
+        /// <summary>
+        /// Contrôle VGS_Inscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary VGS_Inscription;
     }
 }
