@@ -57,8 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MainBaseDonnee.mdf" />
-    <Content Include="App_Data\MainBaseDonnee_log.ldf" />
+    <Content Include="App_Data\MainDB.mdf" />
+    <Content Include="App_Data\MainDB_log.ldf" />
     <Content Include="masterpage.Master" />
     <Content Include="BD.zip" />
     <None Include="Web.Debug.config">

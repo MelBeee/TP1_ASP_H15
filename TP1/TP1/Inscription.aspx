@@ -33,7 +33,9 @@
                 <h2 class="form-signin-heading">Please sign in</h2>
 
                 <asp:Image ID="IMG_User_Inscription" class=" inscrip_img img-circle " runat="server" ClientIDMode="Static" src="Avatars\DefaultAvatar2.png" />
+
                  <asp:Button ID="BTN_Choisir_Image" class="btn btn-lg btn-primary btn_chose" runat="server" Text="Choisir" OnClick="BTN_Choisir_Image_Click" />
+
 
                 <label for="inputNomU" class="sr-only">Username</label>
                 <asp:TextBox type="name" id="nom_Usager" class="form-control" placeholder="Nom Usager" autofocus runat="server"></asp:TextBox>

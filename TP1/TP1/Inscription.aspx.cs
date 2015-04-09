@@ -27,7 +27,7 @@ namespace TP1
 
         protected void BTN_Choisir_Image_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void BTN_Inscription_Annuler_Click(object sender, EventArgs e)
