@@ -12,101 +12,53 @@
     <link href="Main.css" rel="stylesheet" />
     <script src="ClientFormUtilities.js"></script>
 
-
-     <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
         <h2 style="color: white">LogIn
-        <a class="navbar-brand navbar-right" href="#">
-                </a>
-            </h2>
+        <a class="navbar-brand navbar-right" href="#"></a>
+        </h2>
     </nav>
-
-
-
 </head>
+
 <body>
     <form id="form1" runat="server">
 
-         <div class="container">
+        <div class="container">
 
             <div class="row">
-            <div class="col-md-5 col-md-offset-2">
-
-            <form class="form-signin">
+                <div class="col-md-5 col-md-offset-2">
+                </div>
                 <h2 class="form-signin-heading">Please Login</h2>
-        
-                         <label for="inputNomU" class="sr-only">Username</label>
-                         <asp:TextBox type="name" id="TB_Username" class="form-control" placeholder="Nom Usager"  autofocus  runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator
-                            ID="RFV_TB_Username"
-                            runat="server"
-                            Text="Champ requis"
-                            ErrorMessage="Nom d'utilisateur obligatoire !"
-                            ControlToValidate="TB_Username"
-                            ValidationGroup="VG_Login"> 
-                        </asp:RequiredFieldValidator>
 
-                        <asp:CustomValidator
-                            ID="CV_Username"
-                            runat="server"
-                            ErrorMessage="Nom d'utilisateur innexistant !"
-                            Display="None"
-                            ValidationGroup="VG_Login"
-                            OnServerValidate="CV_TB_UserName_ServerValidate"> 
-                        </asp:CustomValidator>
-             
-                       <label for="inputPassword" class="sr-only">Password</label>
-                        <asp:TextBox type="password" ID="TB_Password" runat="server" class="form-control" placeholder="Password"  autofocus></asp:TextBox>
-                        <asp:RequiredFieldValidator
-                            ID="RFV_TB_Password"
-                            runat="server"
-                            Text="Champ requis"
-                            ErrorMessage="Mot de passe obligatoire !"
-                            ControlToValidate="TB_Password"
-                            ValidationGroup="VG_Login"> 
-                        </asp:RequiredFieldValidator>
+                <label for="inputNomU" class="sr-only">Username</label>
+                <asp:TextBox type="name" ID="TB_Username" class="form-control" placeholder="Nom Usager" autofocus runat="server"></asp:TextBox>
+                <asp:Label ID="LabelUsername" runat="server" Text=""></asp:Label>
 
-                        <asp:CustomValidator
-                            ID="CV_Password"
-                            runat="server"
-                            ErrorMessage="Mot de passe invalide !"
-                            Display="None"
-                            ValidationGroup="VG_Login"
-                            OnServerValidate="CV_Password_ServerValidate"> 
-                        </asp:CustomValidator>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <asp:TextBox type="password" ID="TB_Password" runat="server" class="form-control" placeholder="Password" autofocus></asp:TextBox>
+                <asp:Label ID="LabelPassword" runat="server" Text=""></asp:Label>
 
+                <div class="center_button">
+                    <asp:Button ID="BTN_Login" runat="server" Text="LogIn" class="btn btn-lg btn-primary btn-block" ValidationGroup="VG_Login" OnClick="BTN_Login_Click" />
 
-                <div class="center_button">  
-                        <asp:Button ID="BTN_Login" runat="server" Text="LogIn" class="btn btn-lg btn-primary btn-block" ValidationGroup="VG_Login" OnClick="BTN_Login_Click" />
-               
-                        <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Register"  PostBackUrl="~/Inscription.aspx" />
-                
-                        <asp:Button ID="BTN_PasswordReminder" class="btn btn-lg btn-primary btn-block" runat="server" Text="Forgot Password" OnClick="BTN_PasswordReminder_Click" />
-               
-                        <asp:ValidationSummary
-                            ID="VGS_Logi"
-                            runat="server"
-                            ValidationGroup="VG_Login"
-                            HeaderText="Erreurs rencontrées : &lt;hr/&gt;" />
+                    <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Register" PostBackUrl="~/Inscription.aspx" />
+
+                    <asp:Button ID="BTN_PasswordReminder" class="btn btn-lg btn-primary btn-block" runat="server" Text="Forgot Password" OnClick="BTN_PasswordReminder_Click" />
                 </div>
-            </form>
-                </div>
-                </div>
-            
+
+            </div>
         </div>
-                  
     </form>
 
-     <footer id="footer">
-
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-4">
-                    <p>&copy; Copyright 2015 by Dominic Clement and Mélissa Boucher. All Rights Reserved.</p>
+    <footer id="footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-4">
+                        <p>&copy; Copyright 2015 by Dominic Clement and Mélissa Boucher. All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

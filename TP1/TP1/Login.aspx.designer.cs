@@ -31,22 +31,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox TB_Username;
         
         /// <summary>
-        /// Contrôle RFV_TB_Username.
+        /// Contrôle LabelUsername.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_Username;
-        
-        /// <summary>
-        /// Contrôle CV_Username.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CV_Username;
+        protected global::System.Web.UI.WebControls.Label LabelUsername;
         
         /// <summary>
         /// Contrôle TB_Password.
@@ -58,22 +49,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox TB_Password;
         
         /// <summary>
-        /// Contrôle RFV_TB_Password.
+        /// Contrôle LabelPassword.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_TB_Password;
-        
-        /// <summary>
-        /// Contrôle CV_Password.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CV_Password;
+        protected global::System.Web.UI.WebControls.Label LabelPassword;
         
         /// <summary>
         /// Contrôle BTN_Login.
@@ -101,14 +83,5 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_PasswordReminder;
-        
-        /// <summary>
-        /// Contrôle VGS_Logi.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary VGS_Logi;
     }
 }
