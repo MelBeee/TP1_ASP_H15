@@ -34,7 +34,7 @@ namespace TP1
                     LabelUsername_inscr.Text = "Nom d'usager requis.";
                     inscription = false;
                 }
-                else if(Prenom_ID.Text == "")
+                else if (Prenom_ID.Text == "")
                 {
                     LabelPrenom_inscri.Text = "Prenom requis.";
                     inscription = false;
@@ -101,11 +101,11 @@ namespace TP1
         {
             bool EmailVal = false;
 
-            if(inputEmail.Text != inputEmail_confrim.Text)
+            if (inputEmail.Text != inputEmail_confrim.Text)
             {
                 EmailVal = false;
             }
-            else 
+            else
             {
                 EmailVal = true;
             }

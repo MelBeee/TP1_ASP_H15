@@ -1,64 +1,43 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TP1.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TP1.Login" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <title></title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <hr />
+    <asp:Panel ID="Main_Panel" runat="server" >
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="LBL_Username" runat="server" Text="Nom d'utilisateur :"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="TB_Username" runat="server"></asp:TextBox>
+                    <asp:CustomValidator ID="CV_Username" Text="Vide!" runat="server" ControlToValidate="TB_Password" ValidateEmptyText="true" OnServerValidate="CV_Username_ServerValidate"></asp:CustomValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="LBL_Password" runat="server" Text="Password : "></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="TB_Password" runat="server" type="password"></asp:TextBox>
+                    <asp:CustomValidator ID="CV_Password" Text="Vide!" runat="server" ControlToValidate="TB_Password" ValidateEmptyText="true" OnServerValidate="CV_Password_ServerValidate"></asp:CustomValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="BTN_Login" runat="server" CssClass="Button" Text="Connexion..." OnClick="BTN_Login_Click" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="BTN_Inscription" runat="server" CssClass="Button" Text="Inscription..." OnClick="BTN_Inscription_Click" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="BTN_ForgotPassword" runat="server" CssClass="Button" Text="Mot de passe oublié..." OnClick="BTN_PasswordReminder_Click" /></td>
+            </tr>
+        </table>
+        <asp:ValidationSummary ID="Login_Validation" runat="server" />
 
-    <link href="Main.css" rel="stylesheet" />
-    <script src="ClientFormUtilities.js"></script>
+    </asp:Panel>
+</asp:Content>
 
-    <nav class="navbar navbar-inverse" role="navigation">
-        <h2 style="color: white">LogIn
-        <a class="navbar-brand navbar-right" href="#"></a>
-        </h2>
-    </nav>
-</head>
-
-<body>
-    <form id="form1" runat="server">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-5 col-md-offset-2">
-                </div>
-                <h2 class="form-signin-heading">Please Login</h2>
-
-                <label for="inputNomU" class="sr-only">Username</label>
-                <asp:TextBox type="name" ID="TB_Username" class="form-control" placeholder="Nom Usager" autofocus runat="server"></asp:TextBox>
-                <asp:Label ID="LabelUsername" runat="server" Text=""></asp:Label>
-
-                <label for="inputPassword" class="sr-only">Password</label>
-                <asp:TextBox type="password" ID="TB_Password" runat="server" class="form-control" placeholder="Password" autofocus></asp:TextBox>
-                <asp:Label ID="LabelPassword" runat="server" Text=""></asp:Label>
-
-                <div class="center_button">
-                    <asp:Button ID="BTN_Login" runat="server" Text="LogIn" class="btn btn-lg btn-primary btn-block" ValidationGroup="VG_Login" OnClick="BTN_Login_Click" />
-
-                    <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Register" PostBackUrl="~/Inscription.aspx" />
-
-                    <asp:Button ID="BTN_PasswordReminder" class="btn btn-lg btn-primary btn-block" runat="server" Text="Forgot Password" OnClick="BTN_PasswordReminder_Click" />
-                </div>
-
-            </div>
-        </div>
-    </form>
-
-    <footer id="footer">
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-4">
-                        <p>&copy; Copyright 2015 by Dominic Clement and Mélissa Boucher. All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>

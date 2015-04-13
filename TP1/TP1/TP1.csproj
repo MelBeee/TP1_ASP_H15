@@ -60,7 +60,6 @@
     <Content Include="App_Data\MainDB.mdf" />
     <Content Include="App_Data\MainDB_log.ldf" />
     <Content Include="masterpage.Master" />
-    <Content Include="BD.zip" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,6 +119,7 @@
     <Compile Include="masterpage.Master.designer.cs">
       <DependentUpon>masterpage.Master</DependentUpon>
     </Compile>
+    <Compile Include="MethodesPourBD.cs" />
     <Compile Include="Profil.aspx.cs">
       <DependentUpon>Profil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

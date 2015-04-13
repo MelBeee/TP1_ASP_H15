@@ -12,11 +12,11 @@
     <title></title>
 
      <script type="text/javascript" >
-  
-     var RecaptchaOptions = {
-        theme : 'custom',
-        custom_theme_widget: 'recaptcha_widget'
-     };
+
+         var RecaptchaOptions = {
+             theme: 'custom',
+             custom_theme_widget: 'recaptcha_widget'
+         };
      </script>       
 
     <nav class="navbar navbar-inverse" role="navigation">

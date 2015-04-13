@@ -13,15 +13,6 @@ namespace TP1 {
     public partial class Index {
         
         /// <summary>
-        /// Contrôle form1.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// Contrôle BTN_Profil.
         /// </summary>
         /// <remarks>
@@ -31,22 +22,40 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Button BTN_Profil;
         
         /// <summary>
-        /// Contrôle BTN_Usagers.
+        /// Contrôle BTN_JournalLog.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Usagers;
+        protected global::System.Web.UI.WebControls.Button BTN_JournalLog;
         
         /// <summary>
-        /// Contrôle BTN_Journal.
+        /// Contrôle BTN_ManageThreads.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Journal;
+        protected global::System.Web.UI.WebControls.Button BTN_ManageThreads;
+        
+        /// <summary>
+        /// Contrôle BTN_ChatRoom.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_ChatRoom;
+        
+        /// <summary>
+        /// Contrôle BTN_Room.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_Room;
         
         /// <summary>
         /// Contrôle BTN_LogOff.

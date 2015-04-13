@@ -1,22 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginsJournal.aspx.cs" Inherits="TP1.LoginsJournal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" AutoEventWireup="true" CodeBehind="LoginsJournal.aspx.cs" Inherits="TP1.LoginsJournal" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <hr />
+    <asp:Timer runat="server" ID="RefreshPanel" Interval="3000" OnTick="RefreshPanel_Tick"></asp:Timer>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:Panel ID="PN_Users" runat="server"></asp:Panel>
-        <asp:Button ID="BTN_Retour" runat="server" Text="Retour..." OnClick="BTN_Retour_Click" PostBackUrl="~/Index.aspx" />
-    </div>
-    </form>
-</body>
-</html>
+    <asp:UpdatePanel runat="server">
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="RefreshPanel" EventName="Tick" />
+        </Triggers>
+        <ContentTemplate>
+            <asp:Table ID="TB_Log" runat="server"></asp:Table>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
+    <asp:Button ID="BTN_Return" runat="server" Text="Retour..." OnClick="BTN_Return_Click" />
+</asp:Content>
 
 
 

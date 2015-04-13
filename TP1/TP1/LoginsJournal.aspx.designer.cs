@@ -13,30 +13,30 @@ namespace TP1 {
     public partial class LoginsJournal {
         
         /// <summary>
-        /// Contrôle form1.
+        /// Contrôle RefreshPanel.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.Timer RefreshPanel;
         
         /// <summary>
-        /// Contrôle PN_Users.
+        /// Contrôle TB_Log.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PN_Users;
+        protected global::System.Web.UI.WebControls.Table TB_Log;
         
         /// <summary>
-        /// Contrôle BTN_Retour.
+        /// Contrôle BTN_Return.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Retour;
+        protected global::System.Web.UI.WebControls.Button BTN_Return;
     }
 }
