@@ -13,22 +13,31 @@ namespace TP1 {
     public partial class Room {
         
         /// <summary>
-        /// Contrôle RefreshPanel.
+        /// Contrôle RefreshUsers.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.Timer RefreshPanel;
+        protected global::System.Web.UI.Timer RefreshUsers;
         
         /// <summary>
-        /// Contrôle TB_Log.
+        /// Contrôle UPN_OnlineUsers.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TB_Log;
+        protected global::System.Web.UI.UpdatePanel UPN_OnlineUsers;
+        
+        /// <summary>
+        /// Contrôle TB_OnlineUsers.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table TB_OnlineUsers;
         
         /// <summary>
         /// Contrôle BTN_Return.
