@@ -19,33 +19,55 @@ namespace TP1
         public string Prenom;
         public string Email;
         public string Password;
+        public bool inscription = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void BTN_Choisir_Image_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        protected void BTN_Inscription_Annuler_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void BTN_Inscription_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Email_Valide() == true && Password_Valide() == true)
+                if (nom_Usager.Text == "")
                 {
-                    Username = nom_Usager.Text;
-                    Nom = Nom_ID.Text;
-                    Prenom = Prenom_ID.Text;
-                    Email = inputEmail.Text;
-                    Password = inputPassword.Text;
+                    LabelUsername_inscr.Text = "Nom d'usager requis.";
+                    inscription = false;
+                }
+                else if(Prenom_ID.Text == "")
+                {
+                    LabelPrenom_inscri.Text = "Prenom requis.";
+                    inscription = false;
+                }
+                else if (Nom_ID.Text == "")
+                {
+                    LabelNom_inscri.Text = "Nom requis.";
+                    inscription = false;
+                }
+                else if (inputEmail.Text == "")
+                {
+                    LabelEmail_inscri.Text = "Email requis.";
+                    inscription = false;
+                }
+                else if (inputEmail_confrim.Text == "")
+                {
+                    LabelEmailConf_inscri.Text = "Confirmation de Email requis.";
+                    inscription = false;
+                }
+                else if (inputPassword.Text == "")
+                {
+                    LabelPassword_inscri.Text = "Password requis.";
+                    inscription = false;
+                }
+                else if (inputPassword_Con.Text == "")
+                {
+                    LabelPasswordConf_inscri.Text = "Confirmation de Password requis.";
+                    inscription = false;
+                }
+
+                if (Email_Valide() == true && Password_Valide() == true && inscription == true)
+                {
+                    AddPersonneFormData();
                 }
 
             }
@@ -54,6 +76,26 @@ namespace TP1
 
             }
 
+        }
+        protected void AddPersonneFormData()
+        {
+            String avatar_ID = "";
+            if (FU_Avatar.FileName != "")
+            {
+                String Avatar_Path = "";
+
+                avatar_ID = Guid.NewGuid().ToString();
+                Avatar_Path = Server.MapPath(@"~\Avatars\") + avatar_ID + ".png";
+                FU_Avatar.SaveAs(Avatar_Path);
+            }
+
+            Users personne = new Users((String)Application["MainDB"], this);
+            personne.FullName = Prenom_ID.Text + Nom_ID.Text;
+            personne.UserName = nom_Usager.Text;
+            personne.Password = inputPassword.Text;
+            personne.Email = inputEmail.Text;
+            personne.Avatar = avatar_ID;
+            personne.Insert();
         }
         public bool Email_Valide()
         {
