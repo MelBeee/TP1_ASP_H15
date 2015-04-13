@@ -13,39 +13,30 @@ namespace TP1 {
     public partial class Room {
         
         /// <summary>
-        /// Contrôle form1.
+        /// Contrôle RefreshPanel.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.Timer RefreshPanel;
         
         /// <summary>
-        /// Contrôle GridView1.
+        /// Contrôle TB_Log.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Table TB_Log;
         
         /// <summary>
-        /// Contrôle SqlDataSource1.
+        /// Contrôle BTN_Return.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// Contrôle BTN_Retour.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Retour;
+        protected global::System.Web.UI.WebControls.Button BTN_Return;
     }
 }

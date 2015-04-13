@@ -1,41 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="TP1.Room" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="TP1.Room" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <hr />
+    <asp:Timer runat="server" ID="RefreshPanel" Interval="3000" OnTick="RefreshPanel_Tick"></asp:Timer>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-  <form id="form1" runat="server">
-    <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"
-      AutoGenerateColumns="False">
-      <Columns>
-        <asp:BoundField HeaderText="En ligne" DataField="ID" SortExpression="ID" />
-        <asp:BoundField HeaderText="Nom d'usager" DataField="Username" SortExpression="Username" />
-        <asp:BoundField HeaderText="Nom complet" DataField="Fullname" SortExpression="Fullname" />
-        <asp:BoundField HeaderText="Adresse courriel" DataField="Email" SortExpression="Email" />
-        <asp:BoundField HeaderText="Avatar" DataField="Avatar" SortExpression="Avatar" />
-      </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-      SelectCommand="SELECT [ID], [Username], [Fullname], [Email], [Avatar] FROM [users]"
-     ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\MainDB.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" />
-      <asp:Button ID="BTN_Retour" runat="server" Text="Retour..." PostBackUrl="~/Index.aspx"/>
-  </form>
+    <asp:UpdatePanel runat="server">
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="RefreshPanel" EventName="Tick" />
+        </Triggers>
+        <ContentTemplate>
+            <asp:Table ID="TB_Log" runat="server"></asp:Table>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
-     <footer id="footer">
+    <asp:Button ID="BTN_Return" runat="server" Text="Retour..." OnClick="BTN_Return_Click" />
+</asp:Content>
 
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-4">
-                    <p>&copy; Copyright 2015 by Dominic Clement and Mélissa Boucher. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
