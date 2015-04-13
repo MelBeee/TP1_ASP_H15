@@ -215,7 +215,6 @@ namespace TP1
             sda.Fill(customersSet);
             customersTable = customersSet.Tables[0];
 
-
             TableRow tableRow = null;
 
             if (wantHeader)
@@ -233,13 +232,10 @@ namespace TP1
                 }
             }
 
-
             // Create table rows.
 
             foreach (DataRow dr in customersTable.Rows)
             {
-
-
                 tableRow = new TableRow();
                 tableRow.TableSection = TableRowSection.TableBody;
                 container.Controls.Add(tableRow);
@@ -277,9 +273,9 @@ namespace TP1
                             Image imgOnline = new Image();
                             imgOnline.CssClass = "MicroAvatar";
                             if (OnlineUsers.Contains(long.Parse(dbCell.ToString())))
-                                imgOnline.ImageUrl = "/Images/OnLine.png";
+                                imgOnline.ImageUrl = "/Images/on.png";
                             else
-                                imgOnline.ImageUrl = "/Images/OffLine.png";
+                                imgOnline.ImageUrl = "/Images/off.png";
                             tableCell.Controls.Add(imgOnline);
                         }
                         else if (col.ColumnName == "Delete button")
