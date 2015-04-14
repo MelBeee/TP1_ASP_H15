@@ -49,7 +49,7 @@ namespace TP1
         }
         private void DeleteImage(String ID)
         {
-           File.Delete(Server.MapPath(@"~\Avatars\") + ID + ".png");
+           //File.Delete(Server.MapPath(@"~\Avatars\") + ID + ".png");
         }
 
         private void GetFormValues(Users personne)
