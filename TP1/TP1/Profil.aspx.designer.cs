@@ -22,6 +22,15 @@ namespace TP1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm Profile_page;
         
         /// <summary>
+        /// Contrôle LB_ID.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_ID;
+        
+        /// <summary>
         /// Contrôle IMG_Avatar.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelUsername_inscr;
         
         /// <summary>
-        /// Contrôle Prenom_ID.
+        /// Contrôle NomComp_ID.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Prenom_ID;
+        protected global::System.Web.UI.WebControls.TextBox NomComp_ID;
         
         /// <summary>
         /// Contrôle LabelPrenom_inscri.
@@ -74,24 +83,6 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelPrenom_inscri;
-        
-        /// <summary>
-        /// Contrôle Nom_ID.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nom_ID;
-        
-        /// <summary>
-        /// Contrôle LabelNom_inscri.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNom_inscri;
         
         /// <summary>
         /// Contrôle inputEmail.
@@ -173,6 +164,15 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_Inscription;
+        
+        /// <summary>
+        /// Contrôle BTN_Effacer.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_Effacer;
         
         /// <summary>
         /// Contrôle BTN_Inscription_Annuler.

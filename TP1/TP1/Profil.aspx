@@ -22,6 +22,8 @@
             <form class="form-signin">
                 <h2 class="form-signin-heading">Please sign in</h2>
 
+                <asp:Label ID="LB_ID" type="hidden" runat="server" Text=""></asp:Label>
+
                 <asp:Image ID="IMG_Avatar" class=" inscrip_img img-circle " runat="server" ClientIDMode="Static"  ImageUrl="~\Avatars\DefaultAvatar2.png" />
 
                 <asp:FileUpload ID="FU_Avatar" runat="server" ClientIDMode="Static" onchange="PreLoadImage();"/>
@@ -32,14 +34,8 @@
                  <asp:Label ID="LabelUsername_inscr" runat="server" Text=""></asp:Label>
 
                 <label for="inputPrenom" class="sr-only">Prenom</label>
-                <asp:TextBox type="name" id="Prenom_ID" class="form-control" placeholder="Prenom" runat="server" ></asp:TextBox>
+                <asp:TextBox type="name" id="NomComp_ID" class="form-control" placeholder="Nom Complet" runat="server" ></asp:TextBox>
                  <asp:Label ID="LabelPrenom_inscri" runat="server" Text=""></asp:Label>
-
-                
-                <label for="inputNom" class="sr-only">Prenom</label>
-                <asp:TextBox type="name" id="Nom_ID" class="form-control" placeholder="Nom"  runat="server"></asp:TextBox>
-                <asp:Label ID="LabelNom_inscri" runat="server" Text=""></asp:Label>
-
                
 
                  <label for="inputEmail" class="sr-only">Email address</label>
@@ -64,6 +60,7 @@
 
                 <div class="center_button">
                  <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Modifier" />
+                 <asp:Button ID="BTN_Effacer" class="btn btn-lg btn-primary btn-block" runat="server" Text="Effacer" />
                  <asp:Button ID="BTN_Inscription_Annuler" class="btn btn-lg btn-primary btn-block" runat="server" Text="Annuler"  PostBackUrl="~/Index.aspx" />
                
             </div>
