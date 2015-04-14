@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server" method="post">
+    <form id="MainForm" runat="server" method="post">
         <asp:Label ID="LB_NomPage" runat="server"></asp:Label>
         <asp:Label ID="LB_User" runat="server">Anonymous</asp:Label>
         <asp:Image ID="IMG_User" runat="server" ImageUrl="/Images/Anonymous.png" CssClass="GrandeurAvatar"/>

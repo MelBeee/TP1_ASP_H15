@@ -9,7 +9,7 @@
         <table>
             <tr>
                 <td>
-                    <asp:Label ID="LBL_Username" runat="server" Text="Nom d'utilisateur :"></asp:Label></td>
+                    <asp:Label ID="LB_Username" runat="server" Text="Nom d'utilisateur :"></asp:Label></td>
                 <td>
                     <asp:TextBox ID="TB_Username" runat="server"></asp:TextBox>
                     <asp:CustomValidator ID="CV_Username" Text="Vide!" runat="server" ControlToValidate="TB_Password" ValidateEmptyText="true" OnServerValidate="CV_Username_ServerValidate"></asp:CustomValidator>
@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="LBL_Password" runat="server" Text="Password : "></asp:Label></td>
+                    <asp:Label ID="LB_Password" runat="server" Text="Password : "></asp:Label></td>
                 <td>
                     <asp:TextBox ID="TB_Password" runat="server" type="password"></asp:TextBox>
                     <asp:CustomValidator ID="CV_Password" Text="Vide!" runat="server" ControlToValidate="TB_Password" ValidateEmptyText="true" OnServerValidate="CV_Password_ServerValidate"></asp:CustomValidator>

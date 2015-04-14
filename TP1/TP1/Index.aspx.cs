@@ -20,7 +20,7 @@ namespace TP1
         {
             var master = Master as masterpage;
             if (master != null)
-                master.signOut();
+                master.Deconnection();
         }
 
         protected void BTN_Profil_Click(object sender, EventArgs e)

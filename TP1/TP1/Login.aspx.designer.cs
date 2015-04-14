@@ -22,13 +22,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Panel Main_Panel;
         
         /// <summary>
-        /// Contrôle LBL_Username.
+        /// Contrôle LB_Username.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_Username;
+        protected global::System.Web.UI.WebControls.Label LB_Username;
         
         /// <summary>
         /// Contrôle TB_Username.
@@ -49,13 +49,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.CustomValidator CV_Username;
         
         /// <summary>
-        /// Contrôle LBL_Password.
+        /// Contrôle LB_Password.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_Password;
+        protected global::System.Web.UI.WebControls.Label LB_Password;
         
         /// <summary>
         /// Contrôle TB_Password.
