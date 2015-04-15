@@ -176,7 +176,9 @@ namespace TP1
                         else if (col.ColumnName == "Avatar")
                         {
                             Image imgAvatar = new Image();
-                            imgAvatar.CssClass = "";
+                            imgAvatar.CssClass = "inscrip_img_2 img-circle";
+                             
+                           
                             imgAvatar.ImageUrl = @"~\Avatars\" + dbCell.ToString() + ".png";
 
                             tableCell.Controls.Add(imgAvatar);

@@ -15,7 +15,15 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <asp:Button ID="BTN_Return" runat="server" Text="Retour..." OnClick="BTN_Return_Click" />
+            <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+
+    <asp:Button ID="BTN_Return" runat="server" CssClass="btn btn-primary btn-block btn-lg raised" Text="Retour" OnClick="BTN_Return_Click" />
+                </div>
+            </div>
+                </div>
 </asp:Content>
 
 
