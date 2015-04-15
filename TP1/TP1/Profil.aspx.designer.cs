@@ -49,13 +49,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.FileUpload FU_Avatar;
         
         /// <summary>
-        /// Contrôle nom_Usager.
+        /// Contrôle TB_Username.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nom_Usager;
+        protected global::System.Web.UI.WebControls.TextBox TB_Username;
         
         /// <summary>
         /// Contrôle LabelUsername_inscr.
@@ -67,13 +67,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelUsername_inscr;
         
         /// <summary>
-        /// Contrôle NomComp_ID.
+        /// Contrôle TB_Fullname.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NomComp_ID;
+        protected global::System.Web.UI.WebControls.TextBox TB_Fullname;
         
         /// <summary>
         /// Contrôle LabelPrenom_inscri.
@@ -85,13 +85,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelPrenom_inscri;
         
         /// <summary>
-        /// Contrôle inputEmail.
+        /// Contrôle TB_Email.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputEmail;
+        protected global::System.Web.UI.WebControls.TextBox TB_Email;
         
         /// <summary>
         /// Contrôle LabelEmail_inscri.
@@ -103,13 +103,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelEmail_inscri;
         
         /// <summary>
-        /// Contrôle inputEmail_confrim.
+        /// Contrôle TB_EmailConfirm.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputEmail_confrim;
+        protected global::System.Web.UI.WebControls.TextBox TB_EmailConfirm;
         
         /// <summary>
         /// Contrôle LabelEmailConf_inscri.
@@ -121,13 +121,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelEmailConf_inscri;
         
         /// <summary>
-        /// Contrôle inputPassword.
+        /// Contrôle TB_Password.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPassword;
+        protected global::System.Web.UI.WebControls.TextBox TB_Password;
         
         /// <summary>
         /// Contrôle LabelPassword_inscri.
@@ -139,13 +139,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelPassword_inscri;
         
         /// <summary>
-        /// Contrôle inputPassword_Con.
+        /// Contrôle TB_PasswordConfirm.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPassword_Con;
+        protected global::System.Web.UI.WebControls.TextBox TB_PasswordConfirm;
         
         /// <summary>
         /// Contrôle LabelPasswordConf_inscri.
@@ -157,22 +157,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LabelPasswordConf_inscri;
         
         /// <summary>
-        /// Contrôle BTN_Inscription.
+        /// Contrôle BTN_Update.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Inscription;
-        
-        /// <summary>
-        /// Contrôle BTN_Effacer.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Effacer;
+        protected global::System.Web.UI.WebControls.Button BTN_Update;
         
         /// <summary>
         /// Contrôle BTN_Inscription_Annuler.
