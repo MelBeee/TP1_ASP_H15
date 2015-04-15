@@ -6,17 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace TP1
 {
    public partial class Inscription : System.Web.UI.Page
    {
-
-      public string Username;
-      public string Nom;
-      public string Prenom;
-      public string Email;
-      public string Password;
       public bool inscription = true;
 
       protected void Page_Load(object sender, EventArgs e)
@@ -30,59 +25,71 @@ namespace TP1
             Session["captcha"] = BuildCaptcha();
          }
       }
+
+      private void InsererInformationDansTextBox()
+      {
+         SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
+         SqlCommand sqlcommand = new SqlCommand("insert into users (avatar, username, fullname, email, password) values ('" +
+                                                IMG_Avatar.ImageUrl + "', '" +
+                                                nom_Usager.Text + "', '" +
+                                                Prenom_ID.Text + " " + Nom_ID.Text + "', '" +
+                                                inputEmail.Text + "', '" +
+                                                inputPassword.Text + "') ");
+
+         sqlcommand.Connection = connection;
+         connection.Open();
+         SqlDataReader reader = sqlcommand.ExecuteReader();
+
+         reader.Close();
+         connection.Close();
+      }
+
       protected void BTN_Inscription_Click(object sender, EventArgs e)
       {
          if (Page.IsValid)
          {
             Session["message"] = "(Inscription réussie - complétez maintenant votre profil...)";
 
-            try
+            if (nom_Usager.Text == "")
             {
-               if (nom_Usager.Text == "")
-               {
-                  LabelUsername_inscr.Text = "Nom d'usager requis.";
-                  inscription = false;
-               }
-               if (Prenom_ID.Text == "")
-               {
-                  LabelPrenom_inscri.Text = "Prenom requis.";
-                  inscription = false;
-               }
-               if (Nom_ID.Text == "")
-               {
-                  LabelNom_inscri.Text = "Nom requis.";
-                  inscription = false;
-               }
-               if (inputEmail.Text == "")
-               {
-                  LabelEmail_inscri.Text = "Email requis.";
-                  inscription = false;
-               }
-               if (inputEmail_confrim.Text == "")
-               {
-                  LabelEmailConf_inscri.Text = "Confirmation de Email requis.";
-                  inscription = false;
-               }
-               if (inputPassword.Text == "")
-               {
-                  LabelPassword_inscri.Text = "Password requis.";
-                  inscription = false;
-               }
-               if (inputPassword_Con.Text == "")
-               {
-                  LabelPasswordConf_inscri.Text = "Confirmation de Password requis.";
-                  inscription = false;
-               }
-
-               if (Email_Valide() == true && Password_Valide() == true && inscription == true)
-               {
-                  AddPersonneFormData();
-                  Response.Redirect("Index.aspx");
-               }
+               LabelUsername_inscr.Text = "Nom d'usager requis.";
+               inscription = false;
             }
-            catch (Exception ex)
+            if (Prenom_ID.Text == "")
             {
+               LabelPrenom_inscri.Text = "Prenom requis.";
+               inscription = false;
+            }
+            if (Nom_ID.Text == "")
+            {
+               LabelNom_inscri.Text = "Nom requis.";
+               inscription = false;
+            }
+            if (inputEmail.Text == "")
+            {
+               LabelEmail_inscri.Text = "Email requis.";
+               inscription = false;
+            }
+            if (inputEmail_confrim.Text == "")
+            {
+               LabelEmailConf_inscri.Text = "Confirmation de Email requis.";
+               inscription = false;
+            }
+            if (inputPassword.Text == "")
+            {
+               LabelPassword_inscri.Text = "Password requis.";
+               inscription = false;
+            }
+            if (inputPassword_Con.Text == "")
+            {
+               LabelPasswordConf_inscri.Text = "Confirmation de Password requis.";
+               inscription = false;
+            }
 
+            if (Email_Valide() == true && Password_Valide() == true && inscription == true)
+            {
+               AddPersonneFormData();
+               Response.Redirect("Login.aspx");
             }
          }
       }
@@ -98,41 +105,28 @@ namespace TP1
             FU_Avatar.SaveAs(Avatar_Path);
          }
 
-         Users personne = new Users((String)Application["MainDB"], this);
-         personne.FullName = Prenom_ID.Text + Nom_ID.Text;
-         personne.UserName = nom_Usager.Text;
-         personne.Password = inputPassword.Text;
-         personne.Email = inputEmail.Text;
-         personne.Avatar = avatar_ID;
-         personne.Connecter = '0';
-         personne.Insert();
+         InsererInformationDansTextBox();
       }
       public bool Email_Valide()
       {
-         bool EmailVal = false;
+         bool EmailVal = true;
 
          if (inputEmail.Text != inputEmail_confrim.Text)
          {
             EmailVal = false;
          }
-         else
-         {
-            EmailVal = true;
-         }
+
          return EmailVal;
       }
       public bool Password_Valide()
       {
-         bool pswd = false;
+         bool pswd = true;
 
          if (inputPassword.Text != inputPassword_Con.Text)
          {
             pswd = false;
          }
-         else
-         {
-            pswd = true;
-         }
+
          return pswd;
       }
       Random random = new Random();

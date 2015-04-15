@@ -92,7 +92,7 @@ namespace TP1
 
         public static string TrouverNomComplet(SqlConnection connection, String nomutilisateur)
         {
-            string resultat;
+            string resultat = "Anonymous";
 
             SqlCommand sqlcommand = new SqlCommand("SELECT FULLNAME FROM USERS WHERE USERNAME = '" + nomutilisateur + "'");
             sqlcommand.Connection = connection;
@@ -100,8 +100,10 @@ namespace TP1
 
             SqlDataReader userReader = sqlcommand.ExecuteReader();
 
-            userReader.Read();
-            resultat = userReader.GetString(0);
+            if(userReader.Read())
+            {
+               resultat = userReader.GetString(0);
+            }
 
             userReader.Close();
             connection.Close();
