@@ -61,6 +61,7 @@
     <Content Include="App_Data\MainDB_log.ldf" />
     <Content Include="ChatRoom.aspx" />
     <Content Include="masterpage.Master" />
+    <Content Include="masterpageInscription.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="masterpage.Master.designer.cs">
       <DependentUpon>masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="masterpageInscription.Master.cs">
+      <DependentUpon>masterpageInscription.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpageInscription.Master.designer.cs">
+      <DependentUpon>masterpageInscription.Master</DependentUpon>
     </Compile>
     <Compile Include="MethodesPourBD.cs" />
     <Compile Include="Profil.aspx.cs">

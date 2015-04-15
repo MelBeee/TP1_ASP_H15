@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterpageInscription.master.cs" Inherits="TP1.masterpageInscription" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .GrandeurAvatar {
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form id="MainForm" runat="server" method="post">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <asp:Label ID="LB_NomPage" CssClass="master_page_text Nom_Page" runat="server"></asp:Label>
+                        <div class="navbar-right">
+                            <asp:Label ID="LB_User" CssClass="master_page_text master_name" runat="server">Anonymous</asp:Label>
+                            <asp:Image ID="IMG_User" runat="server" ImageUrl="/Images/Anonymous.png" CssClass="GrandeurAvatar inscrip_img_2 img-circle" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+</html>
+

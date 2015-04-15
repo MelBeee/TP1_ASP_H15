@@ -7,8 +7,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-
 namespace TP1
 {
    public partial class Inscription : System.Web.UI.Page
@@ -23,6 +21,9 @@ namespace TP1
 
       protected void Page_Load(object sender, EventArgs e)
       {
+         var master = Master as masterpageInscription;
+         if (master != null)
+            master.SetNomDeLaPage("Inscription");
 
          if (!Page.IsPostBack)
          {

@@ -13,6 +13,10 @@ namespace TP1
    {
       protected void Page_Load(object sender, EventArgs e)
       {
+         var master = Master as masterpage;
+         if (master != null)
+            master.SetNomDeLaPage("Profil");
+
          if (!Page.IsPostBack)
             LoadForm();
       }

@@ -1,33 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Inscription.aspx.cs" Inherits="TP1.Inscription" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpageInscription.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Inscription.aspx.cs" Inherits="TP1.Inscription" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
+</asp:Content>
 
-    <script src="ClientFormUtilities.js"></script>
-    <title></title>
-
-    <script type="text/javascript">
-
-        var RecaptchaOptions = {
-            theme: 'custom',
-            custom_theme_widget: 'recaptcha_widget'
-        };
-    </script>
-
-    <nav class="navbar navbar-inverse" role="navigation">
-        <h2 style="color: white">
-        Inscription
-    </nav>
-</head>
-<body>
-    <form id="form1" runat="server">
-
-
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="container">
 
             <div class="row">
@@ -130,21 +108,8 @@
 
                         <asp:Button ID="BTN_Inscription" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
                         <asp:Button ID="BTN_Inscription_Annuler" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Annuler" PostBackUrl="~/Login.aspx" />
-
-
                     </form>
-
-                    
-
                 </div>
             </div>
-
         </div>
-        <!-- /container -->
-
-    </form>
-   
-
-
-</body>
-</html>
+</asp:Content>

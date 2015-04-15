@@ -1,18 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="Profil.aspx.cs" Inherits="TP1.Profil" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Profil.aspx.cs" Inherits="TP1.Profil" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script src="ClientFormUtilities.js"></script>
-    <title></title>
-</head>
-<body>
-    <form id="Profile_page" runat="server">
         <div>
             <div class="container">
 
@@ -57,17 +50,9 @@
 
 
                         </form>
-
-                            
-
                     </div>
                 </div>
-
             </div>
-
         </div>
-    </form>
-   
 
-</body>
-</html>
+</asp:Content>
