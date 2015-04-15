@@ -54,12 +54,14 @@ input
 .input-recaptcha{
  width:172px;   
 }
-a
+.Nom_Page
 {
-	background-color: #013ADF;
-	color: #ffffff;
-	height: 25px;
-	padding: 10px;
+   font-size: 30px;
+   margin-top: 5px;
+}
+.master_name
+{
+
 }
 body
 {
@@ -74,6 +76,21 @@ body
 	position: center;
 	margin-left: 100px;
 	margin-bottom: 30px;
+}
+.inscrip_img_2
+{	
+	height: 150px;
+	width: 150px;
+	max-height: 150px;
+	max-width: 150px;
+	position: right;
+	margin-left: 10px;
+	margin-bottom: 5px;
+   margin-top: 5px;
+}
+.master_page_text
+{
+   color: #ffffff;
 }
 .btn_chose
 {
@@ -113,4 +130,93 @@ footer {
     padding: 40px 0 0;
     position: asbolute;
 	margin-top: 30px;
+}
+nav {
+  margin-bottom: 0px;
+  padding: 5px;
+  border-bottom: 0px;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+  
+.btn-lg {
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+
+
+
+
+
+
+
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #007299;
+}
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+.btn {
+  display: inline-block;
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+	vertical-align: middle;
+    text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #289fd9;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
 }

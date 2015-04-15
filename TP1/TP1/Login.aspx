@@ -12,7 +12,7 @@
             <div class="col-md-4 col-md-offset-4">
 
                 <form class="form-signin">
-                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <h2 class="form-signin-heading">Login</h2>
 
                     <asp:Panel ID="Main_Panel" runat="server">
 
@@ -25,13 +25,13 @@
                         <asp:TextBox type="password" id="TB_Password" class="form-control" placeholder="Password" runat="server"></asp:TextBox>
                         <asp:CustomValidator ID="CV_Password" Text="Vide!" runat="server" ControlToValidate="TB_Password" ValidateEmptyText="true" OnServerValidate="CV_Password_ServerValidate"></asp:CustomValidator>
 
-                        <asp:Button ID="BTN_Login" runat="server" CssClass="Button" Text="Connexion..." OnClick="BTN_Login_Click" /></td>
+                        <asp:Button ID="BTN_Login" runat="server" CssClass="btn btn-primary btn-block btn-lg raised" Text="Connexion" OnClick="BTN_Login_Click" />
 
-                    <asp:Button ID="BTN_Inscription" runat="server" CssClass="Button" Text="Inscription..." OnClick="BTN_Inscription_Click" /></td>
+                    <asp:Button ID="BTN_Inscription" runat="server" CssClass="btn btn-primary btn-block btn-lg raised" Text="Inscription" OnClick="BTN_Inscription_Click" />
 
-                    <asp:Button ID="BTN_ForgotPassword" runat="server" CssClass="Button" Text="Mot de passe oublié..." OnClick="BTN_PasswordReminder_Click" /></td>
+                    <asp:Button ID="BTN_ForgotPassword" runat="server" CssClass="btn btn-primary btn-block btn-lg raised" Text="Mot de passe oublié" OnClick="BTN_PasswordReminder_Click" />
 
-        <asp:ValidationSummary ID="Login_Validation" runat="server" />
+                    <asp:ValidationSummary ID="Login_Validation" runat="server" />
 
                     </asp:Panel>
                 </form>

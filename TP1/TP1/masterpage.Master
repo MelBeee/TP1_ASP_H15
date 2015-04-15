@@ -29,17 +29,21 @@
         .GrandeurAvatar
         {
             height:40px;
+            width: 40px;
         }
     </style>
 </head>
 <body>
     <form id="MainForm" runat="server" method="post">
+        <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-10 col-md-offset-1">
 
-         <nav class="navbar navbar-inverse" role="navigation">
-
-        <asp:Label ID="LB_NomPage" runat="server"></asp:Label>
-        <asp:Label ID="LB_User" runat="server">Anonymous</asp:Label>
-        <asp:Image ID="IMG_User" runat="server" ImageUrl="/Images/Anonymous.png" CssClass="GrandeurAvatar"/>
+        <asp:Label ID="LB_NomPage" CssClass="master_page_text Nom_Page" runat="server"></asp:Label>
+            <div class="navbar-right">
+        <asp:Label ID="LB_User" CssClass="master_page_text master_name" runat="server">Anonymous</asp:Label>
+        <asp:Image ID="IMG_User" runat="server" ImageUrl="/Images/Anonymous.png" CssClass="GrandeurAvatar inscrip_img_2 img-circle"/>
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <asp:Timer runat="server" ID="SessionTimeout" Interval="1000" OnTick="SessionTimeout_Tick"></asp:Timer>
 
@@ -51,12 +55,18 @@
                 <asp:Label ID="LB_Timeout" runat="server"></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
+                </div>
+
+                                   </div>
+               </div>
+               </div>
         </nav>
 
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
 
     </form>
 </body>
