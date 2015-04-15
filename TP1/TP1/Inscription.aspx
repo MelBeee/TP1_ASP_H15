@@ -73,64 +73,58 @@
                 <asp:TextBox type="password" id="inputPassword_Con" class="form-control" placeholder="Confirmer Password" runat="server"></asp:TextBox>
                 <asp:Label ID="LabelPasswordConf_inscri" runat="server" Text=""></asp:Label>
 
-
-                <form method="post" action="<?php echo $base_url; ?>user/register/check" method="post" class="form-horizontal well" accept-charset="UTF-8">
-
-                    <script type="text/javascript">
-                        var RecaptchaOptions = {
-                            theme: 'custom',
-                            custom_theme_widget: 'recaptcha_widget'
-                        };
-                    </script>
-                    <div id="recaptcha_widget" style="display:none">
-
-                        <div class="control-group">
-                            <label class="control-label"></label>
-                            <div class="controls">
-                                <a id="recaptcha_image" href="#" class="thumbnail"></a>
-                                <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
-                            </div>
-                        </div>
-
-                           <div class="control-group">
-                               <label class="recaptcha_only_if_image control-label">Enter the words above:</label>
-                              <label class="recaptcha_only_if_audio control-label">Enter the numbers you hear:</label>
-
-                              <div class="controls">
-                                  <div class="input-append">
-                                      <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" class="input-recaptcha" />
-                                    <a class="btn" href="javascript:Recaptcha.reload()"><i class="icon-refresh">Reload</i></a>
-                                      <a class="btn recaptcha_only_if_image" href="javascript:Recaptcha.switch_type('audio')"><i title="Get an audio CAPTCHA" class="icon-headphones"></i></a>
-                                      <a class="btn recaptcha_only_if_audio" href="javascript:Recaptcha.switch_type('image')"><i title="Get an image CAPTCHA" class="icon-picture"></i></a>
-                                    <a class="btn" href="javascript:Recaptcha.showhelp()"><i class="icon-question-sign"></i></a>
-                                  </div>
-                              </div>
-                        </div>
-
-                    </div>
-
-                    <script type="text/javascript"
-                       src="<?php echo $recaptcha_url; ?>">
-                    </script>
-
-                    <noscript>
-                        <iframe src="<?php echo $recaptcha_noscript_url; ?>"
-                           height="300" width="500" frameborder="0"></iframe><br>
-                        <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-                        </textarea>
-                        <input type="hidden" name="recaptcha_response_field"
-                           value="manual_challenge">
-                      </noscript>
-</form>
-<script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcrK9cSAAAAALEcjG9gTRPbeA0yAVsKd8sBpFpR"></script>
-
-<noscript>
-    <iframe src="<?php echo $recaptcha_noscript_url; ?>"
-       height="300" width="500" frameborder="0"></iframe><br>
-    <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-    </textarea>
-    <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-</noscript>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"/>
+        <div>
+            <table>
+                <tr>    
+                    <td colspan="2">
+                        <asp:UpdatePanel ID="PN_Captcha" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:ImageButton    ID="RegenarateCaptcha" runat="server" 
+                                                        ImageUrl="~/Images/RegenerateCaptcha.png" 
+                                                        CausesValidation="False" 
+                                                        onclick ="RegenarateCaptcha_Click"
+                                                        ValidationGroup="Subscribe_Validation" 
+                                                        width="48"
+                                                        ToolTip="Regénérer le captcha..." />  
+                                    </td>
+                                    <td>
+                                        <asp:Image ID="IMGCaptcha" imageurl="~/captcha.png" runat="server" />
+                                    </td>
+                                </tr>
+                        </table>
+                        </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>      
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="TB_Captcha" runat="server" MaxLength="5" ></asp:TextBox>
+                        <asp:CustomValidator    ID="CV_Captcha" runat="server" 
+                                                ErrorMessage="Code captcha incorrect!" 
+                                                ValidationGroup="Subscribe_Validation"
+                                                Text="!" 
+                                                ControlToValidate="TB_Captcha" 
+                                                onservervalidate="CV_Captcha_ServerValidate" 
+                                                ValidateEmptyText="True">
+                                                </asp:CustomValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="BTN_Submit" runat="server"
+                                    Text="Soumettre ..."
+                                    ValidationGroup="Subscribe_Validation"
+                                    OnClick="BTN_Submit_Click" />
+                </tr>
+            </table>
+        </div>
+        <asp:ValidationSummary ID="Subscribe_Validation" runat="server" ValidationGroup="Subscribe_Validation" />
 
                 
             </form>
