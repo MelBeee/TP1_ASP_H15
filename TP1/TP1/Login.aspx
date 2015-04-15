@@ -12,7 +12,7 @@
             <div class="col-md-4 col-md-offset-4">
 
                 <form class="form-signin">
-                    <h2 class="form-signin-heading">Login</h2>
+                    <h2 class="form-signin-heading">Connexion</h2>
 
                     <asp:Panel ID="Main_Panel" runat="server">
 

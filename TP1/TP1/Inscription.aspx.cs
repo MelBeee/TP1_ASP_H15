@@ -26,7 +26,7 @@ namespace TP1
          }
       }
 
-      private void InsererInformationDansTextBox()
+      private void InsererInformationDansBD()
       {
          SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
          SqlCommand sqlcommand = new SqlCommand("insert into users (avatar, username, fullname, email, password) values ('" +
@@ -46,10 +46,19 @@ namespace TP1
 
       protected void BTN_Inscription_Click(object sender, EventArgs e)
       {
+         LabelUsername_inscr.Text = "";
+         LabelPrenom_inscri.Text = "";
+         LabelNom_inscri.Text = "";
+         LabelEmail_inscri.Text = "";
+         LabelEmailConf_inscri.Text = "";
+         LabelPassword_inscri.Text = "";
+         LabelPasswordConf_inscri.Text = "";
+         LabelEmail_pasPareil.Text = "";
+         LabelPassword_pasPareil.Text = "";
+         LB_CapchaIncorrecte.Text = "";
+
          if (Page.IsValid)
          {
-            Session["message"] = "(Inscription réussie - complétez maintenant votre profil...)";
-
             if (nom_Usager.Text == "")
             {
                LabelUsername_inscr.Text = "Nom d'usager requis.";
@@ -86,7 +95,7 @@ namespace TP1
                inscription = false;
             }
 
-            if (Email_Valide() == true && Password_Valide() == true && inscription == true)
+            if (Email_Valide() && Password_Valide() && inscription && CapchaValide())
             {
                AddPersonneFormData();
                Response.Redirect("Login.aspx");
@@ -105,8 +114,22 @@ namespace TP1
             FU_Avatar.SaveAs(Avatar_Path);
          }
 
-         InsererInformationDansTextBox();
+         InsererInformationDansBD();
       }
+
+      public bool CapchaValide()
+      {
+         bool capcha = true;
+
+         if(TB_Captcha.Text != (string)Session["captcha"])
+         {
+            capcha = false;
+            LB_CapchaIncorrecte.Text = "Le captcha ne correspond pas.";
+         }
+
+         return capcha;
+      }
+
       public bool Email_Valide()
       {
          bool EmailVal = true;
@@ -115,7 +138,6 @@ namespace TP1
          {
             EmailVal = false;
             LabelEmail_pasPareil.Text = "Les emails ne sont pas les mêmes.";
-
          }
 
          return EmailVal;
@@ -186,15 +208,5 @@ namespace TP1
          IMGCaptcha.ImageUrl = "~/Captcha.png?ID=" + DateTime.Now.ToString();
          PN_Captcha.Update();
       }
-      protected void BTN_Submit_Click(object sender, EventArgs e)
-      {
-
-      }
-      protected void CV_Captcha_ServerValidate(object source, ServerValidateEventArgs args)
-      {
-         args.IsValid = (TB_Captcha.Text == (string)Session["captcha"]);
-      }
-
-
    }
 }
