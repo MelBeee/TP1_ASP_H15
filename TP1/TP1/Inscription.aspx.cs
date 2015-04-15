@@ -119,7 +119,7 @@ namespace TP1
         {
             bool pswd = false;
 
-            if (inputPassword != inputPassword_Con)
+            if (inputPassword.Text != inputPassword_Con.Text)
             {
                 pswd = false;
             }

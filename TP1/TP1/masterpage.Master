@@ -34,6 +34,9 @@
 </head>
 <body>
     <form id="MainForm" runat="server" method="post">
+
+         <nav class="navbar navbar-inverse" role="navigation">
+
         <asp:Label ID="LB_NomPage" runat="server"></asp:Label>
         <asp:Label ID="LB_User" runat="server">Anonymous</asp:Label>
         <asp:Image ID="IMG_User" runat="server" ImageUrl="/Images/Anonymous.png" CssClass="GrandeurAvatar"/>
@@ -48,11 +51,13 @@
                 <asp:Label ID="LB_Timeout" runat="server"></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
+        </nav>
 
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
     </form>
 </body>
 </html>
