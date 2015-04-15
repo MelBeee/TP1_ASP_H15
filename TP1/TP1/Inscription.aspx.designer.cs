@@ -229,6 +229,24 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.ValidationSummary Subscribe_Validation;
         
         /// <summary>
+        /// Contrôle LabelPassword_pasPareil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPassword_pasPareil;
+        
+        /// <summary>
+        /// Contrôle LabelEmail_pasPareil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelEmail_pasPareil;
+        
+        /// <summary>
         /// Contrôle BTN_Inscription.
         /// </summary>
         /// <remarks>

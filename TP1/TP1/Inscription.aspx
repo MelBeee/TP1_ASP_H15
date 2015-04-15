@@ -71,7 +71,7 @@
                                                                 ToolTip="Regénérer le captcha..." />
                                                         </td>
                                                         <td>
-                                                            <asp:Image ID="IMGCaptcha" ImageUrl="~/captcha.png" runat="server" />
+                                                            <asp:Image ID="IMGCaptcha" class="captcha" ImageUrl="~/captcha.png" runat="server" />
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -82,7 +82,7 @@
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>
-                                        <asp:TextBox ID="TB_Captcha" runat="server" MaxLength="5"></asp:TextBox>
+                                        <asp:TextBox ID="TB_Captcha" runat="server" class="form-control" MaxLength="5"></asp:TextBox>
                                         <asp:CustomValidator ID="CV_Captcha" runat="server"
                                             ErrorMessage="Code captcha incorrect!"
                                             ValidationGroup="Subscribe_Validation"
@@ -105,9 +105,14 @@
                         </div>
                         <asp:ValidationSummary ID="Subscribe_Validation" runat="server" ValidationGroup="Subscribe_Validation" />
 
+                         <asp:Label ID="LabelPassword_pasPareil" runat="server" Text=""></asp:Label>
+                         <asp:Label ID="LabelEmail_pasPareil" runat="server" Text=""></asp:Label>
+
 
                         <asp:Button ID="BTN_Inscription" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
+                        <div style="margin-bottom: 50px; margin-top: 10px">
                         <asp:Button ID="BTN_Inscription_Annuler" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Annuler" PostBackUrl="~/Login.aspx" />
+ </div>
                     </form>
                 </div>
             </div>

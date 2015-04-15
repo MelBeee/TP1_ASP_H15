@@ -114,6 +114,8 @@ namespace TP1
          if (inputEmail.Text != inputEmail_confrim.Text)
          {
             EmailVal = false;
+            LabelEmail_pasPareil.Text = "Les emails ne sont pas les mêmes.";
+
          }
 
          return EmailVal;
@@ -125,6 +127,7 @@ namespace TP1
          if (inputPassword.Text != inputPassword_Con.Text)
          {
             pswd = false;
+            LabelPassword_pasPareil.Text = "Les Passwords ne sont pas les mêmes.";
          }
 
          return pswd;
