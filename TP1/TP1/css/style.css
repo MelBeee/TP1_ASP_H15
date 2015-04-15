@@ -1,11 +1,10 @@
-.jumbotron
-{
-	background-color: #449bb6;
-	padding-left:0px;
-	margin-left: 0px;
-   margin-top: 0px;
-   padding-top: 0px;
-	height: 600px;
+.construct {
+  background: url(Images/construction.png);
+  color: #ffffff;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
 .center_button
 {
@@ -46,6 +45,12 @@ padding
 img
 {
    margin-left: 30px;
+}
+.img2
+{
+   margin-left: 0px;
+   height: 700px;
+   width: 700px;
 }
 input
 {
