@@ -50,13 +50,15 @@
                             <asp:TextBox type="password" ID="TB_PasswordConfirm" class="form-control" placeholder="Confirmer Password" runat="server"></asp:TextBox>
                             <asp:Label ID="LabelPasswordConf_inscri" runat="server" Text=""></asp:Label>
 
+
+                            <asp:Button ID="BTN_Update" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Modifier" OnClick="BTN_Update_Click" />
+                            <asp:Button ID="BTN_Inscription_Annuler" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Annuler" PostBackUrl="~/Index.aspx" />
+
+
+
                         </form>
 
-                        <div class="center_button">
-                            <asp:Button ID="BTN_Update" class="btn btn-lg btn-primary btn-block" runat="server" Text="Modifier" OnClick="BTN_Update_Click" />
-                            <asp:Button ID="BTN_Inscription_Annuler" class="btn btn-lg btn-primary btn-block" runat="server" Text="Annuler" PostBackUrl="~/Index.aspx" />
-
-                        </div>
+                            
 
                     </div>
                 </div>

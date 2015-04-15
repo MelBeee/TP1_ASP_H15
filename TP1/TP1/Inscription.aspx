@@ -128,13 +128,13 @@
                         <asp:ValidationSummary ID="Subscribe_Validation" runat="server" ValidationGroup="Subscribe_Validation" />
 
 
+                        <asp:Button ID="BTN_Inscription" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
+                        <asp:Button ID="BTN_Inscription_Annuler" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Annuler" PostBackUrl="~/Login.aspx" />
+
+
                     </form>
 
-                    <div class="center_button">
-                        <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
-                        <asp:Button ID="BTN_Inscription_Annuler" class="btn btn-lg btn-primary btn-block" runat="server" Text="Annuler" PostBackUrl="~/Login.aspx" />
-
-                    </div>
+                    
 
                 </div>
             </div>
