@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inscription.aspx.cs" Inherits="TP1.Inscription" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" enableEventValidation="false" CodeBehind="Inscription.aspx.cs" Inherits="TP1.Inscription" %>
 
 <!DOCTYPE html>
 
@@ -130,7 +130,7 @@
             </form>
 
                 <div class="center_button">
-                 <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
+                 <asp:Button ID="BTN_Inscription" class="btn btn-lg btn-primary btn-block" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click"/>
                  <asp:Button ID="BTN_Inscription_Annuler" class="btn btn-lg btn-primary btn-block" runat="server" Text="Annuler"  PostBackUrl="~/Login.aspx" />
                
             </div>

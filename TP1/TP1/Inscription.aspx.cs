@@ -188,7 +188,6 @@ namespace TP1
             if (Page.IsValid)
             {
                 Session["message"] = "(Inscription réussie - complétez maintenant votre profil...)";
-                Response.Redirect("Profil.aspx");
             }
         }
         protected void CV_Captcha_ServerValidate(object source, ServerValidateEventArgs args)
