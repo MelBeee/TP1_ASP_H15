@@ -11,7 +11,7 @@
             <asp:AsyncPostBackTrigger ControlID="RefreshPanel" EventName="Tick" />
         </Triggers>
         <ContentTemplate>
-            <asp:Table ID="TB_Log" runat="server"></asp:Table>
+            <asp:Table ID="TB_Log" class="table table-striped table-bordered" runat="server"></asp:Table>
         </ContentTemplate>
     </asp:UpdatePanel>
 
