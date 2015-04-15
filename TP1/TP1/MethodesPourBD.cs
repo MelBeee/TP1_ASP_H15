@@ -128,86 +128,6 @@ namespace TP1
             return resultat;
         }
 
-        public static Table createTable(Control content, SqlDataAdapter sda, List<long> OnlineUsers = null)
-        {
-            DataSet customersSet = new DataSet();
-            DataTable customersTable = null;
-            sda.Fill(customersSet);
-            customersTable = customersSet.Tables[0];
-
-
-            TableRow tableRow = null;
-
-            Table tableElem = new Table();
-            tableElem.ID = "DynamicTable";
-
-            if (content as UpdatePanel == null)
-                content.Controls.Add(tableElem);
-            else
-                content.TemplateControl.Controls.Add(tableElem);
-
-            TableRow tableHeader = new TableRow();
-            tableHeader.ID = "DynamicTableHeader";
-            tableHeader.TableSection = TableRowSection.TableHeader;
-            tableElem.Controls.Add(tableHeader);
-
-            foreach (DataColumn col in customersTable.Columns)
-            {
-                TableCell cell = new TableCell();
-                cell.Text = col.ColumnName;
-                tableHeader.Controls.Add(cell);
-            }
-
-            // Create table rows.
-
-            foreach (DataRow dr in customersTable.Rows)
-            {
-
-
-                tableRow = new TableRow();
-                tableRow.TableSection = TableRowSection.TableBody;
-                tableElem.Controls.Add(tableRow);
-                foreach (DataColumn col in customersTable.Columns)
-                {
-                    Object dbCell = dr[col];
-                    TableCell tableCell = new TableCell();
-                    if (!(dbCell is DBNull))
-                    {
-                        if (col.ColumnName == "Email")
-                        {
-                            HyperLink link = new HyperLink();
-                            link.Text = dbCell.ToString();
-                            link.NavigateUrl = "mailto:" + dbCell.ToString();
-
-                            tableCell.Controls.Add(link);
-                        }
-                        else if (col.ColumnName == "Avatar")
-                        {
-                            Image imgAvatar = new Image();
-                            imgAvatar.CssClass = "MicroAvatar";
-                            imgAvatar.ImageUrl = @"~\Avatars\" + dbCell.ToString() + ".png";
-
-                            tableCell.Controls.Add(imgAvatar);
-                        }
-                        else if (col.ColumnName == "En ligne")
-                        {
-                            Image imgOnline = new Image();
-                            imgOnline.CssClass = "MicroAvatar";
-                            if (OnlineUsers.Contains(long.Parse(dbCell.ToString())))
-                                imgOnline.ImageUrl = "/Images/OnLine.png";
-                            else
-                                imgOnline.ImageUrl = "/Images/OffLine.png";
-                            tableCell.Controls.Add(imgOnline);
-                        }
-                        else
-                            tableCell.Text = dbCell.ToString();
-                    }
-                    tableRow.Controls.Add(tableCell);
-                }
-            }
-            return tableElem;
-        }
-
         public static void AppendToTable(Table container, SqlDataAdapter sda, bool wantHeader = false, List<long> OnlineUsers = null)
         {
             DataSet customersSet = new DataSet();
@@ -256,41 +176,20 @@ namespace TP1
                         else if (col.ColumnName == "Avatar")
                         {
                             Image imgAvatar = new Image();
-                            imgAvatar.CssClass = "MicroAvatar";
+                            imgAvatar.CssClass = "";
                             imgAvatar.ImageUrl = @"~\Avatars\" + dbCell.ToString() + ".png";
 
                             tableCell.Controls.Add(imgAvatar);
                         }
-                        else if (col.ColumnName == "CheckBox")
-                        {
-                            CheckBox ChkBox = new CheckBox();
-                            ChkBox.ID = "CHKBOX_" + dbCell.ToString();
-
-                            tableCell.Controls.Add(ChkBox);
-                        }
                         else if (col.ColumnName == "En ligne")
                         {
                             Image imgOnline = new Image();
-                            imgOnline.CssClass = "MicroAvatar";
+                            imgOnline.CssClass = "";
                             if (OnlineUsers.Contains(long.Parse(dbCell.ToString())))
                                 imgOnline.ImageUrl = "/Images/on.png";
                             else
                                 imgOnline.ImageUrl = "/Images/off.png";
                             tableCell.Controls.Add(imgOnline);
-                        }
-                        else if (col.ColumnName == "Delete button")
-                        {
-                            ImageButton deleteBtn = new ImageButton();
-                            deleteBtn.ImageUrl = "/Images/Delete.png";
-                            deleteBtn.ID = "BTN_DeleteMessage_" + dbCell.ToString();
-                            tableCell.Controls.Add(deleteBtn);
-                        }
-                        else if (col.ColumnName == "Edit button")
-                        {
-                            ImageButton editBtn = new ImageButton();
-                            editBtn.ImageUrl = "/Images/Edit.png";
-                            editBtn.ID = "BTN_EditMessage_" + dbCell.ToString();
-                            tableCell.Controls.Add(editBtn);
                         }
                         else
                             tableCell.Text = dbCell.ToString();
