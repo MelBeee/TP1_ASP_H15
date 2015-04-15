@@ -11,11 +11,19 @@
             <asp:AsyncPostBackTrigger ControlID="RefreshPanel" EventName="Tick" />
         </Triggers>
         <ContentTemplate>
-            <asp:Table ID="TB_Log" runat="server"></asp:Table>
+            <asp:Table ID="TB_Log" class="table table-striped table-bordered" runat="server"></asp:Table>
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <asp:Button ID="BTN_Return" runat="server" Text="Retour..." OnClick="BTN_Return_Click" />
+            <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+
+    <asp:Button ID="BTN_Return" runat="server" CssClass="btn btn-primary btn-block btn-lg raised" Text="Retour" OnClick="BTN_Return_Click" />
+                </div>
+            </div>
+                </div>
 </asp:Content>
 
 
