@@ -98,16 +98,16 @@ namespace TP1
 
       public void DeconnecterUtilisateurTableUser()
       {
-         SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
-         SqlCommand sqlcommand = new SqlCommand(" update users set "
-                                              + " connecte = '0' "
-                                              + " where username = '" + HttpContext.Current.User.Identity.Name + "'");
-         sqlcommand.Connection = connection;
-         connection.Open();
-         SqlDataReader reader = sqlcommand.ExecuteReader();
+         //SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
+         //SqlCommand sqlcommand = new SqlCommand(" update users set "
+         //                                     + " connecte = '0' "
+         //                                     + " where username = '" + HttpContext.Current.User.Identity.Name + "'");
+         //sqlcommand.Connection = connection;
+         //connection.Open();
+         //SqlDataReader reader = sqlcommand.ExecuteReader();
 
-         reader.Close();
-         connection.Close();
+         //reader.Close();
+         //connection.Close();
       }
    }
 }

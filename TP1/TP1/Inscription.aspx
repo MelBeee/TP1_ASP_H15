@@ -143,18 +143,7 @@
         <!-- /container -->
 
     </form>
-    <footer id="footer">
-
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-4">
-                        <p>&copy; Copyright 2015 by Dominic Clement and Mélissa Boucher. All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   
 
 
 </body>
