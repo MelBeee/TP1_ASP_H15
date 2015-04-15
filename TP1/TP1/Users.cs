@@ -14,6 +14,7 @@ namespace TP1
         public String Password { get; set; }
         public String Email { get; set; }
         public String Avatar { get; set; }
+        public Char Connecter { get; set; }
 
         public Users(String connexionString, System.Web.UI.Page Page)
             : base(connexionString, Page)
@@ -28,12 +29,14 @@ namespace TP1
             Password = this["Password"];
             Email = this["Email"];
             Avatar = this["Avatar"];
+            Connecter = char.Parse(this["Connecte"]);
         }
 
         public override void InitColumnsVisibility()
         {
             base.InitColumnsVisibility();
             SetColumnVisibility("Avatar", false);
+            SetColumnVisibility("Connecte", false);
         }
 
         public override void InitCellsContentDelegate()
@@ -58,11 +61,11 @@ namespace TP1
 
         public override void Insert()
         {
-            InsertRecord(FullName, UserName, Password, Email, Avatar);
+            InsertRecord(FullName, UserName, Password, Email, Avatar, Connecter);
         }
         public override void Update()
         {
-            UpdateRecord(ID, FullName, UserName, Password, Email, Avatar);
+            UpdateRecord(ID, FullName, UserName, Password, Email, Avatar, Connecter);
         }
    }
 }

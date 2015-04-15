@@ -103,6 +103,7 @@ namespace TP1
          personne.Password = inputPassword.Text;
          personne.Email = inputEmail.Text;
          personne.Avatar = avatar_ID;
+         personne.Connecter = '0';
          personne.Insert();
       }
       public bool Email_Valide()
