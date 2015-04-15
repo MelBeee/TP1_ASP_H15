@@ -17,7 +17,7 @@ namespace TP1
             if (master != null)
                 master.SetNomDeLaPage("Login");
         } 
-
+       //test
         protected void BTN_Inscription_Click(object sender, EventArgs e)
         {
             Response.Redirect("Inscription.aspx");
