@@ -11,7 +11,9 @@
             <asp:AsyncPostBackTrigger ControlID="RefreshUsers" EventName="Tick" />
         </Triggers>
         <ContentTemplate>
-            <asp:Table GridLines="Both" ID="TB_OnlineUsers" runat="server" >
+
+            <asp:Table GridLines="Both" class="table table-striped table-bordered" ID="TB_OnlineUsers" runat="server" >
+
             </asp:Table>
             <br />
             <asp:Button ID="BTN_Return" runat="server" Text="Retour..." OnClick="BTN_Return_Click" />

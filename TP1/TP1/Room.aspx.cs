@@ -18,8 +18,6 @@ namespace TP1
 
            SqlDataAdapter sda = new SqlDataAdapter("SELECT ID AS 'En ligne', USERNAME AS 'Nom d''usager', FULLNAME AS 'Nom au complet', Email, Avatar FROM USERS", (String)Application["MainDB"]);
            MethodesPourBD.AppendToTable(TB_OnlineUsers, sda, true, (List<long>)Application["OnlineUsers"]);
-
-          
         }
 
         protected void BTN_Return_Click(object sender, EventArgs e)
