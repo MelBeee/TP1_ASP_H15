@@ -21,6 +21,8 @@ namespace TP1
             var master = Master as masterpage;
             if (master != null)
                 master.Deconnection();
+
+            Session["EssaieDeConnexion"] = 0;
         }
 
         protected void BTN_Profil_Click(object sender, EventArgs e)

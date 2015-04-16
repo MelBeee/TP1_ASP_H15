@@ -23,8 +23,8 @@ namespace TP1
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session["Limite"] = 3;
             Session["Timeout"] = DateTime.Now;
+            Session["EssaieDeConnexion"] = 0;
         }
 
         protected void Session_End(object sender, EventArgs e)

@@ -16,7 +16,12 @@ namespace TP1
             var master = Master as masterpage;
             if (master != null)
                 master.SetNomDeLaPage("Login");
-        } 
+
+            if ((int)Session["EssaieDeConnexion"] == 3)
+            {
+                ClientAlert(this, "Vous avez atteint le maximum d'essaie de connexion possible. Veuillez réessayer plus tard. ");
+            }
+        }
 
         protected void BTN_Inscription_Click(object sender, EventArgs e)
         {
@@ -27,19 +32,26 @@ namespace TP1
         {
             SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
 
-            if (Page.IsValid)
+            if ((int)Session["EssaieDeConnexion"] == 3)
             {
-                if (!((List<long>)Application["OnlineUsers"]).Contains(MethodesPourBD.TrouverIDUtilisateur(connection, TB_Username.Text)))
+                ClientAlert(this, "Vous avez atteint le maximum d'essaie de connexion possible. Veuillez réessayer plus tard. ");
+            }
+            else
+            {
+                if (Page.IsValid)
                 {
-                    ((List<long>)Application["OnlineUsers"]).Add(MethodesPourBD.TrouverIDUtilisateur(connection, TB_Username.Text));
-                }
+                    if (!((List<long>)Application["OnlineUsers"]).Contains(MethodesPourBD.TrouverIDUtilisateur(connection, TB_Username.Text)))
+                    {
+                        ((List<long>)Application["OnlineUsers"]).Add(MethodesPourBD.TrouverIDUtilisateur(connection, TB_Username.Text));
+                    }
 
-                HttpCookie authCookie = FormsAuthentication.GetAuthCookie(TB_Username.Text, true);
-                authCookie.Expires = DateTime.Now.AddMinutes((double)Application["SessionTimeout"]);
-                Response.Cookies.Add(authCookie);
-                Session["isAuthenticated"] = true;
-                Session["SessionStartTime"] = DateTime.Now;
-                Response.Redirect("Index.aspx");
+                    HttpCookie authCookie = FormsAuthentication.GetAuthCookie(TB_Username.Text, true);
+                    authCookie.Expires = DateTime.Now.AddMinutes((double)Application["SessionTimeout"]);
+                    Response.Cookies.Add(authCookie);
+                    Session["isAuthenticated"] = true;
+                    Session["SessionStartTime"] = DateTime.Now;
+                    Response.Redirect("Index.aspx");
+                }
             }
         }
 
@@ -79,8 +91,8 @@ namespace TP1
 
                 eMail.To = reader.GetString(0);
                 eMail.Subject = "Rappel de Mot de Passe";
-                eMail.Body = "Votre mot de passe est le suivant : " 
-                            + reader.GetString(1) 
+                eMail.Body = "Votre mot de passe est le suivant : "
+                            + reader.GetString(1)
                             + "<br/><br/> Attention de ne pas oublier trop souvent ! <br/> "
                             + "Melissa et Dominic";
 
@@ -140,6 +152,7 @@ namespace TP1
             else if (!bonPassword)
             {
                 args.IsValid = false;
+                Session["EssaieDeConnexion"] = (int)Session["EssaieDeConnexion"] + 1;
                 CV_Password.ErrorMessage = "Le mot de passe est incorrect!";
                 CV_Password.Text = "Mauvais!";
             }

@@ -23,7 +23,7 @@ namespace TP1
 
          if (!Page.IsPostBack)
          {
-            Session["TimeoutPage"] = 60 * 10;  // 10 minutes de timeout
+            Session["TimeoutPage"] = 60 * 5;  // 5 minutes de timeout
             Session["Timeout"] = DateTime.Now;
             HttpCookie authCookie = FormsAuthentication.GetAuthCookie(HttpContext.Current.User.Identity.Name, false);
             authCookie.Expires = DateTime.Now.AddMinutes((double)Application["SessionTimeout"]);
@@ -89,25 +89,10 @@ namespace TP1
             ((List<long>)Application["OnlineUsers"]).Remove(MethodesPourBD.TrouverIDUtilisateur(connection, HttpContext.Current.User.Identity.Name));
          }
 
-         DeconnecterUtilisateurTableUser();
          Session["isAuthenticated"] = false;
          Session.Abandon();
          FormsAuthentication.SignOut();
          Response.Redirect("Login.aspx");
-      }
-
-      public void DeconnecterUtilisateurTableUser()
-      {
-         //SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
-         //SqlCommand sqlcommand = new SqlCommand(" update users set "
-         //                                     + " connecte = '0' "
-         //                                     + " where username = '" + HttpContext.Current.User.Identity.Name + "'");
-         //sqlcommand.Connection = connection;
-         //connection.Open();
-         //SqlDataReader reader = sqlcommand.ExecuteReader();
-
-         //reader.Close();
-         //connection.Close();
       }
    }
 }
