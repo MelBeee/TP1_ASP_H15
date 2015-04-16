@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
+    <script src="ClientFormUtilities.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -16,12 +17,10 @@
                             <h2 class="form-signin-heading">Please sign in</h2>
 
                             <asp:Label ID="LB_ID" type="hidden" runat="server" Text=""></asp:Label>
-                            <asp:Image ID="IMG_Avatar" class=" inscrip_img img-circle " runat="server" ClientIDMode="Static" ImageUrl="~\Avatars\Anonymous.png" />
+                            <asp:Image ID="IMG_Avatar" class=" inscrip_img img-circle " runat="server" ClientIDMode="Static"  />
                             <asp:FileUpload ID="FU_Avatar" runat="server" ClientIDMode="Static" onchange="PreLoadImage();" />
 
-                            <label for="inputNomU" class="sr-only">Username</label>
-                            <asp:TextBox type="name" ID="TB_Username" class="form-control" placeholder="Nom Usager" autofocus runat="server"></asp:TextBox>
-                            <asp:Label ID="LabelUsername_inscr" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="LB_Username" runat="server" Text=""></asp:Label>
 
                             <label for="inputPrenom" class="sr-only">Prenom</label>
                             <asp:TextBox type="name" ID="TB_Fullname" class="form-control" placeholder="Nom Complet" runat="server"></asp:TextBox>

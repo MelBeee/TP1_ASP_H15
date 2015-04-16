@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace TP1
 {
@@ -19,11 +20,12 @@ namespace TP1
          var master = Master as masterpageInscription;
          if (master != null)
             master.SetNomDeLaPage("Inscription");
-
          if (!Page.IsPostBack)
          {
             Session["captcha"] = BuildCaptcha();
          }
+
+         IMG_Avatar.ImageUrl = @"~\Images\Anonymous.png";
       }
 
       private void InsererInformationDansBD()
@@ -94,6 +96,11 @@ namespace TP1
                LabelPasswordConf_inscri.Text = "Confirmation de Password requis.";
                inscription = false;
             }
+            if (IMG_Avatar.ImageUrl == "")
+            {
+               // LABEL  MET UNE IMAGE CRISSE
+               inscription = false;
+            }
 
             if (Email_Valide() && Password_Valide() && inscription && CapchaValide())
             {
@@ -102,16 +109,21 @@ namespace TP1
             }
          }
       }
+      private void DeleteImage(String ID)
+      {
+        // File.Delete(Server.MapPath(ID));
+      }
       protected void AddPersonneFormData()
       {
-         String avatar_ID = "";
          if (FU_Avatar.FileName != "")
          {
             String Avatar_Path = "";
-
+            String avatar_ID = "";
+           // DeleteImage(IMG_Avatar.ImageUrl);
             avatar_ID = Guid.NewGuid().ToString();
             Avatar_Path = Server.MapPath(@"~\Avatars\") + avatar_ID + ".png";
             FU_Avatar.SaveAs(Avatar_Path);
+            IMG_Avatar.ImageUrl = avatar_ID;
          }
 
          InsererInformationDansBD();

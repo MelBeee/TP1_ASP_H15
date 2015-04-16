@@ -40,22 +40,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.FileUpload FU_Avatar;
         
         /// <summary>
-        /// Contrôle TB_Username.
+        /// Contrôle LB_Username.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_Username;
-        
-        /// <summary>
-        /// Contrôle LabelUsername_inscr.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUsername_inscr;
+        protected global::System.Web.UI.WebControls.Label LB_Username;
         
         /// <summary>
         /// Contrôle TB_Fullname.

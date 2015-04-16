@@ -357,7 +357,6 @@ function PreLoadImage(e) {
         fReader.onloadend = function (event) {
             // the event.target.result contains the image data 
             imageTarget.src = event.target.result;
-
         }
     }
     return true;

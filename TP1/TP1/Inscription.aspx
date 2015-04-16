@@ -15,7 +15,7 @@
                 <form class="form-signin">
                     <h2 class="form-signin-heading">Please sign in</h2>
 
-                    <asp:Image ID="IMG_Avatar" class=" inscrip_img img-circle " runat="server" ClientIDMode="Static" ImageUrl="~\Avatars\DefaultAvatar2.png" />
+                    <asp:Image ID="IMG_Avatar" class=" inscrip_img img-circle " runat="server" ClientIDMode="Static" />
                     <asp:FileUpload ID="FU_Avatar" runat="server" ClientIDMode="Static" onchange="PreLoadImage();" />
 
                     <label for="inputNomU" class="sr-only">Username</label>

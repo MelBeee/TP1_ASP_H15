@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -29,7 +30,7 @@ namespace TP1
       private void InsererInformationDansTextBox()
       {
          SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
-         SqlCommand sqlcommand = new SqlCommand("SELECT avatar, username, fullname, email, password from users where username = '" + HttpContext.Current.User.Identity.Name + "'");
+         SqlCommand sqlcommand = new SqlCommand("SELECT avatar, fullname, email, password from users where username = '" + HttpContext.Current.User.Identity.Name + "'");
          sqlcommand.Connection = connection;
          connection.Open();
          SqlDataReader reader = sqlcommand.ExecuteReader();
@@ -37,12 +38,12 @@ namespace TP1
          if (reader.Read())
          {
             AfficherImage(reader.GetString(0));
-            TB_Username.Text = reader.GetString(1);
-            TB_Fullname.Text = reader.GetString(2);
-            TB_Email.Text = reader.GetString(3);
-            TB_EmailConfirm.Text = reader.GetString(3);
-            TB_Password.Text = reader.GetString(4);
-            TB_PasswordConfirm.Text = reader.GetString(4);
+            LB_Username.Text = HttpContext.Current.User.Identity.Name;
+            TB_Fullname.Text = reader.GetString(1);
+            TB_Email.Text = reader.GetString(2);
+            TB_EmailConfirm.Text = reader.GetString(2);
+            TB_Password.Text = reader.GetString(3);
+            TB_PasswordConfirm.Text = reader.GetString(3);
          }
 
          reader.Close();
@@ -52,22 +53,17 @@ namespace TP1
       private void AfficherImage(string Path)
       {
          if (Path != "")
-            IMG_Avatar.ImageUrl = "Avatars/" + Path + ".png"; // +"?" + DateTime.Now.Millisecond.ToString();
+            IMG_Avatar.ImageUrl =  @"~\Avatars\" + Path + ".png" ;
          else
-            IMG_Avatar.ImageUrl = "Images/Anonymous.png"; // +"?" + DateTime.Now.Millisecond.ToString();
-      }
-
-      private void DeleteImage(String ID)
-      {
-
+            IMG_Avatar.ImageUrl = @"~\Images\Anonymous.png";
       }
 
       private void UpdateCurrent()
       {
          SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
+         GestionAvatar();
          SqlCommand sqlcommand = new SqlCommand("update users set "
-                                                + " avatar =  '"  + IMG_Avatar.ImageUrl   + "' , "
-                                                + " username = '" + TB_Username.Text      + "' , "
+                                                + " avatar =  '"  + IMG_Avatar.ImageUrl   + "' , " 
                                                 + " fullname = '" + TB_Fullname.Text      + "' , "
                                                 + " email = '"    + TB_Email.Text         + "' , "
                                                 + " password = '" + TB_Password.Text      + "' "
@@ -78,6 +74,25 @@ namespace TP1
 
          reader.Close();
          connection.Close();
+      }
+
+      private void DeleteImage(String ID)
+      {
+         File.Delete(Server.MapPath(ID));
+      }
+
+      private void GestionAvatar()
+      {
+         if (FU_Avatar.FileName != "")
+         {
+            String Avatar_Path = "";
+            String avatar_ID = "";
+            DeleteImage(IMG_Avatar.ImageUrl);
+            avatar_ID = Guid.NewGuid().ToString();
+            Avatar_Path = Server.MapPath(@"~\Avatars\") + avatar_ID + ".png";
+            FU_Avatar.SaveAs(Avatar_Path);
+            IMG_Avatar.ImageUrl = avatar_ID;
+         }
       }
 
       private bool Verification()
@@ -122,15 +137,15 @@ namespace TP1
             }
          }
 
-         if(TB_Username.Text == "")
-         {
-            // LABEL  HEY LE USERNAME EST VIDE
-            Pareil = false;
-         }
-
          if(TB_Fullname.Text == "")
          {
             // LABEL  HEY LE FULLNAME EST VIDE
+            Pareil = false;
+         }
+
+         if(IMG_Avatar.ImageUrl == "")
+         {
+            // LABEL  MET UNE IMAGE CRISSE
             Pareil = false;
          }
 
