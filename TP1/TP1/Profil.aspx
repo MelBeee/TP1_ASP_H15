@@ -24,8 +24,6 @@
                             <asp:FileUpload ID="FU_Avatar" runat="server" ClientIDMode="Static" onchange="PreLoadImage();" />
                              <asp:Label ID="LabelImage" runat="server" Text=""></asp:Label>
 
-                            
-
                             <label for="inputPrenom" class="sr-only">Prenom</label>
                             <asp:TextBox type="name" ID="TB_Fullname" class="form-control" placeholder="Nom Complet" runat="server"></asp:TextBox>
                             <asp:Label ID="LabelPrenom_inscri" runat="server" Text=""></asp:Label>
@@ -46,16 +44,11 @@
                             <asp:TextBox type="password" ID="TB_PasswordConfirm" class="form-control" placeholder="Confirmer Password" runat="server"></asp:TextBox>
                             <asp:Label ID="LabelPasswordConf_inscri" runat="server" Text=""></asp:Label>
 
-
                             <asp:Label ID="LabelPassword_pasPareil" runat="server" Text=""></asp:Label>
                             <asp:Label ID="LabelEmail_pasPareil" runat="server" Text=""></asp:Label>
 
-
                             <asp:Button ID="BTN_Update" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Modifier" OnClick="BTN_Update_Click" />
                             <asp:Button ID="BTN_Inscription_Annuler" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Annuler" PostBackUrl="~/Index.aspx" />
-
-
-
                         </form>
                     </div>
                 </div>

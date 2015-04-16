@@ -58,6 +58,7 @@ namespace TP1
          LabelEmail_pasPareil.Text = "";
          LabelPassword_pasPareil.Text = "";
          LB_CapchaIncorrecte.Text = "";
+         SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
 
          if (Page.IsValid)
          {
@@ -99,6 +100,11 @@ namespace TP1
             if (IMG_Avatar.ImageUrl == "")
             {
                // LABEL  MET UNE IMAGE CRISSE
+               inscription = false;
+            }
+            if (MethodesPourBD.NomUtilisateurExiste(connection, nom_Usager.Text))
+            {
+               LabelUsername_inscr.Text = "Nom d'usager déjà utilisé.";
                inscription = false;
             }
 

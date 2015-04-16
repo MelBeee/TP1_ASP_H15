@@ -53,7 +53,7 @@ namespace TP1
       private void AfficherImage(string Path)
       {
          if (Path != "")
-            IMG_Avatar.ImageUrl =  @"~\Avatars\" + Path + ".png" ;
+            IMG_Avatar.ImageUrl = @"~\Avatars\" + Path + ".png";
          else
             IMG_Avatar.ImageUrl = @"~\Images\Anonymous.png";
       }
@@ -63,10 +63,10 @@ namespace TP1
          SqlConnection connection = new SqlConnection((String)Application["MainDB"]);
          GestionAvatar();
          SqlCommand sqlcommand = new SqlCommand("update users set "
-                                                + " avatar =  '"  + IMG_Avatar.ImageUrl   + "' , " 
-                                                + " fullname = '" + TB_Fullname.Text      + "' , "
-                                                + " email = '"    + TB_Email.Text         + "' , "
-                                                + " password = '" + TB_Password.Text      + "' "
+                                                + " avatar =  '" + IMG_Avatar.ImageUrl + "' , "
+                                                + " fullname = '" + TB_Fullname.Text + "' , "
+                                                + " email = '" + TB_Email.Text + "' , "
+                                                + " password = '" + TB_Password.Text + "' "
                                                 + " where username = '" + HttpContext.Current.User.Identity.Name + "'");
          sqlcommand.Connection = connection;
          connection.Open();
@@ -143,14 +143,14 @@ namespace TP1
             }
          }
 
-         if(TB_Fullname.Text == "")
+         if (TB_Fullname.Text == "")
          {
             // LABEL  HEY LE FULLNAME EST VIDE
             LabelPrenom_inscri.Text = "Nom Complet requis.";
             Pareil = false;
          }
 
-         if(IMG_Avatar.ImageUrl == "")
+         if (IMG_Avatar.ImageUrl == "")
          {
             // LABEL  MET UNE IMAGE CRISSE
             LabelImage.Text = "Vous devez choisir une image.";
@@ -160,8 +160,21 @@ namespace TP1
          return Pareil;
       }
 
+      private void ResetLabel()
+      {
+         LabelPassword_pasPareil.Text = "";
+         LabelPassword_inscri.Text = "";
+         LabelPasswordConf_inscri.Text = "";
+         LabelEmail_pasPareil.Text = "";
+         LabelEmail_inscri.Text = "";
+         LabelEmailConf_inscri.Text = "";
+         LabelPrenom_inscri.Text = "";
+         LabelImage.Text = "";
+      }
+
       protected void BTN_Update_Click(object sender, EventArgs e)
       {
+         ResetLabel();
          if (Verification())
          {
             UpdateCurrent();
