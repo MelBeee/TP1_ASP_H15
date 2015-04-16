@@ -64,7 +64,9 @@
                                                             ToolTip="Regénérer le captcha..." />
                                                     </td>
                                                     <td>
-                                                        <asp:Image ID="IMGCaptcha" class="captcha" ImageUrl="~/captcha.png" runat="server" />
+                                                        <div style="width:200px; height:70px;" class="captcha">
+                                                            <asp:Image ID="IMGCaptcha" class="captcha" ImageUrl="~/captcha.png" runat="server" />
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>

@@ -27,17 +27,7 @@ namespace TP1
 
         protected void RefreshUsers_Tick(object sender, EventArgs e)
         {
-           RemoveChilds(TB_OnlineUsers);
-        }
-
-        private void RemoveChilds(Control control)
-        {
-           foreach (Control c in control.Controls)
-           {
-              if (c.Controls.Count > 0)
-                 RemoveChilds(c);
-              control.Controls.Remove(c);
-           }
+           PNL_FuckLeFlicker.Controls.Clear();
         }
     }
 }

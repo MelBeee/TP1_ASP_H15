@@ -78,7 +78,10 @@ namespace TP1
 
       private void DeleteImage(String ID)
       {
-         File.Delete(Server.MapPath(ID));
+         if (File.Exists(Server.MapPath(ID)))
+         {
+            File.Delete(Server.MapPath(ID));
+         }
       }
 
       private void GestionAvatar()

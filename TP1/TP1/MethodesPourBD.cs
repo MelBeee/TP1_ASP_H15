@@ -177,13 +177,13 @@ namespace TP1
                         }
                         else if (col.ColumnName == "Avatar")
                         {
+                           tableCell.Controls.Add(new LiteralControl("<div style='height: 50px; width: 50px'>"));
                             Image imgAvatar = new Image();
                             imgAvatar.CssClass = "inscrip_img_2 img-circle";
-                             
-                           
                             imgAvatar.ImageUrl = @"~\Avatars\" + dbCell.ToString() + ".png";
 
                             tableCell.Controls.Add(imgAvatar);
+                            tableCell.Controls.Add(new LiteralControl("</div>"));
                         }
                         else if (col.ColumnName == "En ligne")
                         {

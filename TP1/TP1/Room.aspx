@@ -1,7 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="TP1.Room" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        #PNL_FuckLeFlicker
+        {
+            height:650px;
+            width:90%;
+            padding:20px;
+        }
 
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" ClientIDMode="Static">
     <hr/>
@@ -12,9 +22,11 @@
         </Triggers>
         <ContentTemplate>
 
-            <asp:Table GridLines="Both" class="table table-striped table-bordered" ID="TB_OnlineUsers" runat="server" >
+            <asp:Panel ID="PNL_FuckLeFlicker" runat="server" ScrollBars="Vertical">
+                <asp:Table GridLines="Both" class="table table-striped table-bordered" ID="TB_OnlineUsers" runat="server" >
+                </asp:Table>
+            </asp:Panel>
 
-            </asp:Table>
             <br />
             <div class="container">
 
