@@ -102,6 +102,7 @@ namespace TP1
          if (TB_Password.Text != TB_PasswordConfirm.Text)
          {
             // LABEL  HEY LES MOT DE PASSE SONT PAS PAREILLE
+            LabelPassword_pasPareil.Text = "Les Passwords ne sont pas les mêmes.";
             Pareil = false;
          }
          else
@@ -109,11 +110,13 @@ namespace TP1
             if (TB_Password.Text == "")
             {
                // LABEL  HEY LE MOT DE PASSE EST VIDE
+               LabelPassword_inscri.Text = "Password requis.";
                Pareil = false;
             }
             if (TB_PasswordConfirm.Text == "")
             {
                // LABEL  HEY LA CONFIRMATION DU MOT DE PASSE EST VIDE
+               LabelPasswordConf_inscri.Text = "Confirmation de Password requis.";
                Pareil = false;
             }
          }
@@ -121,6 +124,7 @@ namespace TP1
          if (TB_Email.Text != TB_EmailConfirm.Text)
          {
             // LABEL  HEY LES EMAILS SONT PAS PAREILLE
+            LabelEmail_pasPareil.Text = "Les emails ne sont pas les mêmes.";
             Pareil = false;
          }
          else
@@ -128,11 +132,13 @@ namespace TP1
             if (TB_Email.Text == "")
             {
                // LABEL  HEY LE EMAIL EST VIDE
+               LabelEmail_inscri.Text = "Email requis.";
                Pareil = false;
             }
             if (TB_EmailConfirm.Text == "")
             {
                // LABEL  HEY LA CONFIRMATION DU EMAIL EST VIDE
+               LabelEmailConf_inscri.Text = "Confirmation de Email requis.";
                Pareil = false;
             }
          }
@@ -140,12 +146,14 @@ namespace TP1
          if(TB_Fullname.Text == "")
          {
             // LABEL  HEY LE FULLNAME EST VIDE
+            LabelPrenom_inscri.Text = "Nom Complet requis.";
             Pareil = false;
          }
 
          if(IMG_Avatar.ImageUrl == "")
          {
             // LABEL  MET UNE IMAGE CRISSE
+            LabelImage.Text = "Vous devez choisir une image.";
             Pareil = false;
          }
 

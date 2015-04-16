@@ -10,6 +10,10 @@
 {
    max-width: 250px;
 }
+.user
+{
+   position: center;
+}
 .navbar-brand
 {  
    margin-top: 0px;

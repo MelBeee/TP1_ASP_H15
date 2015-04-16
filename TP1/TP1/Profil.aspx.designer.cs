@@ -13,6 +13,15 @@ namespace TP1 {
     public partial class Profil {
         
         /// <summary>
+        /// Contrôle LB_Username.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_Username;
+        
+        /// <summary>
         /// Contrôle LB_ID.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.FileUpload FU_Avatar;
         
         /// <summary>
-        /// Contrôle LB_Username.
+        /// Contrôle LabelImage.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LB_Username;
+        protected global::System.Web.UI.WebControls.Label LabelImage;
         
         /// <summary>
         /// Contrôle TB_Fullname.
@@ -137,6 +146,24 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelPasswordConf_inscri;
+        
+        /// <summary>
+        /// Contrôle LabelPassword_pasPareil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPassword_pasPareil;
+        
+        /// <summary>
+        /// Contrôle LabelEmail_pasPareil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelEmail_pasPareil;
         
         /// <summary>
         /// Contrôle BTN_Update.
