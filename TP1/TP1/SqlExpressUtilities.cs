@@ -223,7 +223,6 @@ namespace SqlExpressUtilities
 
             // retourner le nombre d'enregistrements générés
             return reader.RecordsAffected;
-
         }
 
         // Conclure la dernière requête
