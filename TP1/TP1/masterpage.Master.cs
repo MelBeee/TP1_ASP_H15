@@ -23,7 +23,7 @@ namespace TP1
 
          if (!Page.IsPostBack)
          {
-            Session["TimeoutPage"] = 60 * 5;  // 5 minutes de timeout
+            Session["TimeoutPage"] = 60 * 2;  // 2 minutes de timeout
             Session["Timeout"] = DateTime.Now;
             HttpCookie authCookie = FormsAuthentication.GetAuthCookie(HttpContext.Current.User.Identity.Name, false);
             authCookie.Expires = DateTime.Now.AddMinutes((double)Application["SessionTimeout"]);

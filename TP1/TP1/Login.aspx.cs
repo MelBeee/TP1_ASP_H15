@@ -35,6 +35,7 @@ namespace TP1
             if ((int)Session["EssaieDeConnexion"] == 3)
             {
                 ClientAlert(this, "Vous avez atteint le maximum d'essaie de connexion possible. Veuillez réessayer plus tard. ");
+                Response.End();
             }
             else
             {
