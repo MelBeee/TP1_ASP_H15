@@ -104,6 +104,10 @@ body
 {
    color: #ffffff;
 }
+.pad
+{
+	margin-top: 7px;
+}
 .btn_chose
 {
 	margin-bottom: 30px;
