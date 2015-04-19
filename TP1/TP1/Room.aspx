@@ -6,7 +6,7 @@
     <style>
         #PNL_FuckLeFlicker
         {
-            height:650px;
+            height:550px;
             width:90%;
             padding:20px;
         }
