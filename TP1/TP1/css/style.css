@@ -108,6 +108,19 @@ body
 {
    color: #ffffff;
 }
+.warning
+{	
+	color: #F20505;
+}
+.chat_img
+{
+	height: 35px;
+	width: 35px;
+}
+.discu_size
+{
+	font-size: 20px;
+}
 .pad
 {
 	margin-top: 7px;

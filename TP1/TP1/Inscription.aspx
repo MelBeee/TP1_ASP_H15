@@ -20,31 +20,31 @@
 
                     <label for="inputNomU" class="sr-only">Username</label>
                     <asp:TextBox type="name" ID="nom_Usager" class="form-control" placeholder="Nom Usager" autofocus runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelUsername_inscr" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelUsername_inscr" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <label for="inputPrenom" class="sr-only">Prenom</label>
                     <asp:TextBox type="name" ID="Prenom_ID" class="form-control" placeholder="Prenom" runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelPrenom_inscri" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelPrenom_inscri" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <label for="inputNom" class="sr-only">Prenom</label>
                     <asp:TextBox type="name" ID="Nom_ID" class="form-control" placeholder="Nom" runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelNom_inscri" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelNom_inscri" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <label for="inputEmail" class="sr-only">Email address</label>
                     <asp:TextBox type="email" ID="inputEmail" class="form-control" placeholder="Email address" runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelEmail_inscri" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelEmail_inscri" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <label for="inputEmail" class="sr-only">Confirmer Email address</label>
                     <asp:TextBox type="email" ID="inputEmail_confrim" class="form-control" placeholder="Confirmer Email address" runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelEmailConf_inscri" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelEmailConf_inscri" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <label for="inputPassword" class="sr-only">Password</label>
                     <asp:TextBox type="password" ID="inputPassword" class="form-control" placeholder="Password" runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelPassword_inscri" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelPassword_inscri" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <label for="inputPassword" class="sr-only">Password</label>
                     <asp:TextBox type="password" ID="inputPassword_Con" class="form-control" placeholder="Confirmer Password" runat="server"></asp:TextBox>
-                    <asp:Label ID="LabelPasswordConf_inscri" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelPasswordConf_inscri" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <asp:ScriptManager ID="ScriptManager1" runat="server" />
                     <div>
@@ -83,9 +83,9 @@
                         </table>
                     </div>
 
-                    <asp:Label ID="LabelPassword_pasPareil" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="LabelEmail_pasPareil" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="LB_CapchaIncorrecte" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelPassword_pasPareil" CssClass="warning" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LabelEmail_pasPareil" CssClass="warning" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LB_CapchaIncorrecte" CssClass="warning" runat="server" Text=""></asp:Label>
 
                     <asp:Button ID="BTN_Inscription" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Inscription" OnClick="BTN_Inscription_Click" />
                     <div style="margin-bottom: 50px; margin-top: 10px">
