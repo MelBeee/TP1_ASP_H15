@@ -130,6 +130,27 @@ namespace TP1
             return resultat;
         }
 
+        public static long TrouverIDThread(SqlConnection connection, String title)
+        {
+            long result;
+
+            SqlCommand sqlcmdUserCheck = new SqlCommand("SELECT ID FROM THREADS WHERE TITLE = '" + title + "'");
+            sqlcmdUserCheck.Connection = connection;
+            connection.Open();
+
+            SqlDataReader userReader = sqlcmdUserCheck.ExecuteReader();
+
+            userReader.Read();
+            result = userReader.GetInt64(0);
+
+            userReader.Close();
+            connection.Close();
+
+
+            return result;
+        }
+
+
         public static void AppendToTable(Table container, SqlDataAdapter sda, bool wantHeader = false, List<long> OnlineUsers = null)
         {
             DataSet customersSet = new DataSet();
@@ -194,6 +215,13 @@ namespace TP1
                             else
                                 imgOnline.ImageUrl = "/Images/off.png";
                             tableCell.Controls.Add(imgOnline);
+                        }
+                        else if (col.ColumnName == "CheckBox")
+                        {
+                            CheckBox ChkBox = new CheckBox();
+                            ChkBox.ID = "CHKBOX_" + dbCell.ToString();
+
+                            tableCell.Controls.Add(ChkBox);
                         }
                         else
                             tableCell.Text = dbCell.ToString();
