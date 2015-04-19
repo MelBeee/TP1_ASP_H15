@@ -13,85 +13,85 @@ namespace TP1 {
     public partial class ThreadsManager {
         
         /// <summary>
-        /// Contrôle UPN_Titre_Discussion.
+        /// Contrôle UP_Titre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPN_Titre_Discussion;
+        protected global::System.Web.UI.UpdatePanel UP_Titre;
         
         /// <summary>
-        /// Contrôle TBX_TitreDiscussion.
+        /// Contrôle TB_Titre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBX_TitreDiscussion;
+        protected global::System.Web.UI.WebControls.TextBox TB_Titre;
         
         /// <summary>
-        /// Contrôle CVal_TitreDiscussion.
+        /// Contrôle CV_Titre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CVal_TitreDiscussion;
+        protected global::System.Web.UI.WebControls.CustomValidator CV_Titre;
         
         /// <summary>
-        /// Contrôle UPN_Thread_List.
+        /// Contrôle UP_List.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPN_Thread_List;
+        protected global::System.Web.UI.UpdatePanel UP_List;
         
         /// <summary>
-        /// Contrôle LB_Thread_List.
+        /// Contrôle LB_Thread.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox LB_Thread_List;
+        protected global::System.Web.UI.WebControls.ListBox LB_Thread;
         
         /// <summary>
-        /// Contrôle CV_AuMoinsUnInvite.
+        /// Contrôle CV_NbreUser.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CV_AuMoinsUnInvite;
+        protected global::System.Web.UI.WebControls.CustomValidator CV_NbreUser;
         
         /// <summary>
-        /// Contrôle UPN_UsersCheckboxes.
+        /// Contrôle UP_CBUser.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPN_UsersCheckboxes;
+        protected global::System.Web.UI.UpdatePanel UP_CBUser;
         
         /// <summary>
-        /// Contrôle CBOX_AllUsers.
+        /// Contrôle CB_AllUsers.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CBOX_AllUsers;
+        protected global::System.Web.UI.WebControls.CheckBox CB_AllUsers;
         
         /// <summary>
-        /// Contrôle TB_AllExistingUsers.
+        /// Contrôle TB_Users.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TB_AllExistingUsers;
+        protected global::System.Web.UI.WebControls.Table TB_Users;
         
         /// <summary>
         /// Contrôle BTN_Clear.
@@ -103,22 +103,22 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Button BTN_Clear;
         
         /// <summary>
-        /// Contrôle UPN_BTN_Send_Or_Create.
+        /// Contrôle UP_BTNModCre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPN_BTN_Send_Or_Create;
+        protected global::System.Web.UI.UpdatePanel UP_BTNModCre;
         
         /// <summary>
-        /// Contrôle BTN_Modify_Or_Create.
+        /// Contrôle BTN_ModCre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Modify_Or_Create;
+        protected global::System.Web.UI.WebControls.Button BTN_ModCre;
         
         /// <summary>
         /// Contrôle BTN_Delete.
