@@ -225,7 +225,7 @@ namespace TP1
 
                     int accessToAll = CBOX_AllUsers.Checked ? 1 : 0;
 
-                    SqlCommand sqlcmdInsertThread = new SqlCommand("INSERT INTO THREADS VALUES(1," + MethodesPourBD.TrouverIDUtilisateur(connection, HttpContext.Current.User.Identity.Name) + ", '" + TBX_TitreDiscussion.Text + "', '" + DateTime.Now + "', " + accessToAll + ")");
+                    SqlCommand sqlcmdInsertThread = new SqlCommand("INSERT INTO THREADS VALUES(" + MethodesPourBD.TrouverIDUtilisateur(connection, HttpContext.Current.User.Identity.Name) + ", '" + TBX_TitreDiscussion.Text + "', '" + DateTime.Now + "', " + accessToAll + ")");
                     sqlcmdInsertThread.Connection = connection;
                     connection.Open();
 
