@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" AutoEventWireup="true" CodeBehind="ChatRoom.aspx.cs" Inherits="TP1.ChatRoom" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpage.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ChatRoom.aspx.cs" Inherits="TP1.ChatRoom" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -10,9 +10,10 @@
     <asp:Timer runat="server" ID="RefreshChat" Interval="3000" OnTick="RefreshChat_Tick"></asp:Timer>
     <asp:Timer runat="server" ID="RefreshUsers" Interval="3000" OnTick="RefreshUsers_Tick"></asp:Timer>
     <table>
+        <div style="margin-left: 50px">
         <tr>
             <td><b style="font-size: xx-large; width:20%; text-align:center;">Discussions</b></td>
-            <td colspan="2" style="width:60%;">
+            <td colspan="2" class="conversation-wrap col-lg-3" style="width:60%;">
                 <asp:UpdatePanel ID="UPN_Creator" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                         <b style="font-size: xx-large;">
@@ -24,6 +25,7 @@
             </td>
             <td><b style="font-size: xx-large; width:20%; text-align:center;">Utilisateurs</b></td>
         </tr>
+            </div>
         <tr>
             <td>
                 <asp:UpdatePanel ID="UPN_ConvoList" runat="server">
@@ -31,7 +33,7 @@
                     </Triggers>
                     <ContentTemplate>
                         <div id="DIV_ConvoList" style="overflow: auto; border: thin solid black; height: 200px; width: 278px; display: inline-block; text-align: center;">
-                            <asp:Table ID="TB_ConvoList" runat="server" Width="250px">
+                            <asp:Table ID="TB_ConvoList"  runat="server" Width="250px">
                             </asp:Table>
                         </div>
                     </ContentTemplate>
@@ -44,7 +46,7 @@
                     </Triggers>
                     <ContentTemplate>
                         <div id="DIV_Chat" style="overflow: auto; height: 200px; width: 765px">
-                            <asp:Table GridLines="Horizontal" ID="TB_Chat" runat="server" Width="746px">
+                            <asp:Table GridLines="Horizontal" class="table table-striped table-bordered" ID="TB_Chat" runat="server" Width="746px">
                             </asp:Table>
                         </div>
                     </ContentTemplate>
@@ -57,7 +59,7 @@
                     </Triggers>
                     <ContentTemplate>
                         <div id="DIV_OnlineUsers" style="overflow: auto; height: 200px; border-width: thin; border-style: solid;">
-                            <asp:Table GridLines="Both" ID="TB_UserList" runat="server"></asp:Table>
+                            <asp:Table GridLines="Both" class="table table-striped table-bordered" ID="TB_UserList" runat="server"></asp:Table>
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>

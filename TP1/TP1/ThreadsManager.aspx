@@ -54,6 +54,8 @@
                     </asp:UpdatePanel>
                 </div>
 
+                <div>
+
                 <asp:Button ID="BTN_Clear" CssClass="btn btn-primary btn-block btn-lg raised" CausesValidation="false" runat="server" Text="Nouveau" OnClick="BTN_Clear_Click" />
 
                 <asp:UpdatePanel ID="UP_BTNModCre" runat="server" UpdateMode="Conditional">
@@ -64,6 +66,8 @@
 
                 <asp:Button ID="BTN_Delete" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Effacer" OnClick="BTN_Delete_Click" />
                 <asp:Button ID="BTN_Return" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Retour" OnClick="BTN_Return_Click" />
+
+                    </div>
             </div>
         </div>
     </div>
