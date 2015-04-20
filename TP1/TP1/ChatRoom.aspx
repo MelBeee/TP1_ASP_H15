@@ -9,17 +9,20 @@
     <hr />
     <asp:Timer runat="server" ID="RefreshChat" Interval="3000" OnTick="RefreshChat_Tick"></asp:Timer>
     <asp:Timer runat="server" ID="RefreshUsers" Interval="3000" OnTick="RefreshUsers_Tick"></asp:Timer>
-    <table >
+    <table>
         <tr>
-            <td><b><u>Discussions</u></b></td>
-            <td colspan="2">
+            <td><b style="font-size: xx-large; width:20%; text-align:center;">Discussions</b></td>
+            <td colspan="2" style="width:60%;">
                 <asp:UpdatePanel ID="UPN_Creator" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
-                        <b style="font-size:xx-large;"><asp:Label ID="LBL_Titre_Convo" runat="server" ></asp:Label></b>
-                        <i style="font-size:small;"><asp:Label ID="LBL_Creator" runat="server" Width="300px" ></asp:Label></i>
+                        <b style="font-size: xx-large;">
+                            <asp:Label ID="LBL_Titre_Convo" runat="server"></asp:Label></b>
+                        <i style="font-size: small;">
+                            <asp:Label ID="LBL_Creator" runat="server" Width="300px"></asp:Label></i>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
+            <td><b style="font-size: xx-large; width:20%; text-align:center;">Utilisateurs</b></td>
         </tr>
         <tr>
             <td>
@@ -34,25 +37,20 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
-            <td  style="border-style: solid;">
+            <td style="border-style: solid;">
                 <asp:UpdatePanel ID="UPN_Chat" runat="server" UpdateMode="Conditional">
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="RefreshChat" EventName="Tick" />
                     </Triggers>
                     <ContentTemplate>
                         <div id="DIV_Chat" style="overflow: auto; height: 200px; width: 765px">
-                            <asp:Table GridLines="Horizontal"  ID="TB_Chat" runat="server" Width="746px">
+                            <asp:Table GridLines="Horizontal" ID="TB_Chat" runat="server" Width="746px">
                             </asp:Table>
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
-        </tr>
-        <tr>
-            <td>
-                <b><u>Utilisateurs</u></b>
-                <br />
-                <br />
+            <td style="border-style:none">
                 <asp:UpdatePanel ID="UPN_OnlineUsers" runat="server" UpdateMode="Conditional">
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="RefreshUsers" EventName="Tick" />
@@ -64,7 +62,10 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
-            <td style="vertical-align: top; text-align: center" >
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td style="vertical-align: top; text-align: center">
                 <asp:UpdatePanel ID="UPN_BTN_Send" runat="server" UpdateMode="Conditional">
                     <Triggers>
                     </Triggers>
@@ -77,8 +78,10 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
+            <td></td>
         </tr>
     </table>
+    <hr />
     <div class="col-md-4 col-md-offset-4">
         <asp:Button ID="BTN_Return" CssClass="btn btn-primary btn-block btn-lg raised" runat="server" Text="Retour" OnClick="BTN_Return_Click" />
     </div>
