@@ -219,7 +219,6 @@ namespace TP1
                         {
                             CheckBox ChkBox = new CheckBox();
                             ChkBox.ID = "CHKBOX_" + dbCell.ToString();
-
                             tableCell.Controls.Add(ChkBox);
                         }
                         else if (col.ColumnName == "Delete button")
