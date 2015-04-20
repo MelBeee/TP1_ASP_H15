@@ -62,7 +62,7 @@ namespace TP1
 
             SqlDataReader userReader = sqlcommand.ExecuteReader();
 
-            if(userReader.Read())
+            if (userReader.Read())
                 resultat = userReader.GetString(0);
 
             userReader.Close();
@@ -100,9 +100,9 @@ namespace TP1
 
             SqlDataReader userReader = sqlcommand.ExecuteReader();
 
-            if(userReader.Read())
+            if (userReader.Read())
             {
-               resultat = userReader.GetString(0);
+                resultat = userReader.GetString(0);
             }
 
             userReader.Close();
@@ -149,7 +149,6 @@ namespace TP1
 
             return result;
         }
-
 
         public static void AppendToTable(Table container, SqlDataAdapter sda, bool wantHeader = false, List<long> OnlineUsers = null)
         {
@@ -198,7 +197,7 @@ namespace TP1
                         }
                         else if (col.ColumnName == "Avatar")
                         {
-                           tableCell.Controls.Add(new LiteralControl("<div style='height: 50px; width: 50px'>"));
+                            tableCell.Controls.Add(new LiteralControl("<div style='height: 50px; width: 50px'>"));
                             Image imgAvatar = new Image();
                             imgAvatar.CssClass = "inscrip_img_2 img-circle";
                             imgAvatar.ImageUrl = @"~\Avatars\" + dbCell.ToString() + ".png";
@@ -222,6 +221,20 @@ namespace TP1
                             ChkBox.ID = "CHKBOX_" + dbCell.ToString();
 
                             tableCell.Controls.Add(ChkBox);
+                        }
+                        else if (col.ColumnName == "Delete button")
+                        {
+                            ImageButton deleteBtn = new ImageButton();
+                            deleteBtn.ImageUrl = "/Images/ic_delete96.png";
+                            deleteBtn.ID = "BTN_DeleteMessage_" + dbCell.ToString();
+                            tableCell.Controls.Add(deleteBtn);
+                        }
+                        else if (col.ColumnName == "Edit button")
+                        {
+                            ImageButton editBtn = new ImageButton();
+                            editBtn.ImageUrl = "/Images/ic_pencil43.png";
+                            editBtn.ID = "BTN_EditMessage_" + dbCell.ToString();
+                            tableCell.Controls.Add(editBtn);
                         }
                         else
                             tableCell.Text = dbCell.ToString();
