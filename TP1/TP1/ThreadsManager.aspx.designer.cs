@@ -49,22 +49,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox TB_Titre;
         
         /// <summary>
-        /// Contrôle CV_Titre.
+        /// Contrôle Valid_Titre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CV_Titre;
-        
-        /// <summary>
-        /// Contrôle CV_NbreUser.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CV_NbreUser;
+        protected global::System.Web.UI.WebControls.Label Valid_Titre;
         
         /// <summary>
         /// Contrôle UP_CBUser.
@@ -74,6 +65,15 @@ namespace TP1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UP_CBUser;
+        
+        /// <summary>
+        /// Contrôle Valid_Users.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Valid_Users;
         
         /// <summary>
         /// Contrôle CB_AllUsers.

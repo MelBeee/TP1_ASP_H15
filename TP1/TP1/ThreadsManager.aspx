@@ -9,9 +9,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container">
-        <div class="row" >
+        <div class="row">
             <div class="col-md-4 ">
-                <table >
+                <table>
                     <tr>
                         <td>
                             <div style="text-align: center; width: 400px;">
@@ -29,29 +29,28 @@
                         <td>
                             <div style="text-align: center; padding: 10px;">
                                 <b style="font-size: large; width: 20%; text-align: center;">Créer/Modifier une discussion</b>
-                            </div>
-                            <div>
-                                <asp:UpdatePanel ID="UP_Titre" runat="server" UpdateMode="Conditional">
-                                    <ContentTemplate>
-                                        <div style="padding: 5px; text-align: center;">
-                                            <b style="font-size: medium; width: 20%; text-align: center;">Titre</b>
-                                        </div>
-                                        <asp:TextBox ID="TB_Titre" runat="server" Width="300px"></asp:TextBox>
-                                        <asp:CustomValidator ID="CV_Titre" runat="server" ErrorMessage="Titre obligatoire" Text="Vide!"
-                                            ControlToValidate="TB_Titre" OnServerValidate="CV_Titre_ServerValidate" ValidateEmptyText="True" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
+
+                                <div>
+                                    <asp:UpdatePanel ID="UP_Titre" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <div style="padding: 5px; text-align: center;">
+                                                <i style="font-size: medium; width: 20%; text-align: center;">Titre</i>
+                                            </div>
+                                            <asp:TextBox ID="TB_Titre" runat="server" Width="300px"></asp:TextBox>
+                                            <asp:Label ID="Valid_Titre" runat="server" CssClass="warning"></asp:Label>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
                             </div>
                             <div style="padding: 5px; text-align: center;">
-                                <b style="font-size: medium; width: 20%; text-align: center;">Qui inviter ?</b>
+                                <i style="font-size: medium; width: 20%; text-align: center;">Qui inviter ?</i>
                             </div>
                             <div class="table table-striped table-bordered conversation-wrap">
-                                <asp:CustomValidator ID="CV_NbreUser" runat="server" Text="Il faut minimum un invité."
-                                    OnServerValidate="CV_NbreUser_ServerValidate" />
                                 <asp:UpdatePanel ID="UP_CBUser" runat="server" UpdateMode="Conditional">
                                     <Triggers></Triggers>
                                     <ContentTemplate>
                                         <div style="text-align: center;">
+                                            <asp:Label ID="Valid_Users" runat="server" CssClass="warning"></asp:Label><hr style="height: 1px;">
                                             <asp:CheckBox ID="CB_AllUsers" runat="server" Text="Tous les usagers" OnCheckedChanged="CB_AllUsers_CheckedChanged" />
                                             <asp:Table ID="TB_Users" class="table table-striped table-bordered conversation-wrap" runat="server"></asp:Table>
                                         </div>
